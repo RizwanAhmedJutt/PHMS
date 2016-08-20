@@ -26,19 +26,14 @@ namespace PHMS
         {
               getMax();
             //dataGridViewItemType.Hide();
-            dataGridViewCategory.Hide();
-            dataGridViewCompany.Hide();
             dataGridViewItemType.RowTemplate.MinimumHeight = 30;
-            dataGridViewCategory.RowTemplate.MinimumHeight = 30;
-            btnCategoryDelete.Enabled = false;
-            btnCategoryUpdate.Enabled = false;
+      
             btnItemDelete.Enabled = false;
             btnItemUpdate.Enabled = false;
-            btnCompanyDelete.Enabled = false;
-            btnCompanyUpdate.Enabled = false;
         }
       
-        #region Save,Upate AND Delete Drags      
+        #region Save,Upate AND Delete Drags 
+       
         private void btnItemSave_Click(object sender, EventArgs e)
         {
             if (txtItemName.Text == "")
@@ -216,213 +211,6 @@ namespace PHMS
                 MessageBox.Show(ex.Message);
             }
         }
-        #endregion
-
-        #region Insert,Update and Delete Category
-        private void btnCategorySave_Click(object sender, EventArgs e)
-        {
-            if (txtCategory.Text == "")
-            {
-                MessageBox.Show("Enter Category Name !!!", "Insertion Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                txtCategory.Focus();
-                return;
-            }
-            if (db.Execute("insert into Category(CategoryName) values('" + txtCategory.Text + "')") > 0)
-            {
-                MessageBox.Show("Record Successfully Saved !!", "Record Saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                txtCategory.Clear();
-            }
-            else
-            {
-                MessageBox.Show("Record Not Saved !!", "Saved Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            }
-        }
-        private void btnCategoryDelete_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                DialogResult dialog = MessageBox.Show("Do You Really Want To Delete Category ??", "Deletetion Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
-                if (dialog == DialogResult.Yes)
-                {
-                    if (db.Execute("delete from Category where CategoryID=" + txtCategoryID.Text + " ") > 0)
-                    {
-                        MessageBox.Show("Record Has Been Deleted Successfully!!", "Record Delete", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        txtCategory.Clear();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Record Not Deleted !!", "Delete Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-        private void btnCategoryUpdate_Click(object sender, EventArgs e)
-        {
-            if (db.Execute("update  Category set CategoryName='" + txtCategory.Text + "' where  CategoryID=" + txtCategoryID.Text + " ") > 0)
-            {
-                MessageBox.Show("Record Has Been Updated Successfully!!", "Record Updated", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                txtCategory.Clear();
-            }
-            else
-            {
-                MessageBox.Show("Record Not Updated !!", "Update Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            }
-        }
-        private void btnCategoryNew_Click(object sender, EventArgs e)
-        {
-            txtCategory.Clear();
-            btnCategoryDelete.Enabled = false;
-            btnCategoryUpdate.Enabled = false;
-            btnCategorySave.Enabled = true;
-        }
-        private void btnCategoryGetdata_Click(object sender, EventArgs e)
-        {
-
-            try
-            {
-                dataGridViewCategory.Show();
-                reader = db.selectQuery("select * from Category");
-                dataGridViewCategory.Rows.Clear();
-                while (reader.Read())
-                {
-                    dataGridViewCategory.Rows.Add(reader["CategoryID"], reader["CategoryName"], "Edit");
-                }
-                db.ConnectionClose();
-                for (int i = 0; i < dataGridViewCategory.RowCount; i++)
-                {
-                    if (i % 2 != 0)
-                    {
-                        dataGridViewCategory.Rows[i].DefaultCellStyle.BackColor = Color.WhiteSmoke;
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-        private void dataGridViewCategory_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.ColumnIndex == 2)
-            {
-                txtCategoryID.Text = dataGridViewCategory.Rows[e.RowIndex].Cells[0].Value.ToString();
-                txtCategory.Text = dataGridViewCategory.Rows[e.RowIndex].Cells[1].Value.ToString();
-                dataGridViewCategory.Hide();
-                btnCategoryUpdate.Enabled = true;
-                btnCategorySave.Enabled = false;
-                btnCategoryDelete.Enabled = true;
-            }
-        }
-        #endregion
-        #region
-        private void btnCompanySave_Click_1(object sender, EventArgs e)
-        {
-            if (txtCompanyName.Text == "")
-            {
-                MessageBox.Show("Enter Company Name !!!", "Insertion Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                txtCategory.Focus();
-                return;
-            }
-            if (db.Execute("insert into Company(CompanyName) values('" + txtCompanyName.Text + "')") > 0)
-            {
-                MessageBox.Show("Record Successfully Saved !!", "Record Saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                txtCategory.Clear();
-            }
-            else
-            {
-                MessageBox.Show("Record Not Saved !!", "Saved Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            }
-        }
-        private void btnCompanyDelete_Click(object sender, EventArgs e)
-        {
-            DialogResult dialog = MessageBox.Show("Do You Really Want To Delete Category ??", "Deletetion Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
-            if (dialog == DialogResult.Yes)
-            {
-                if (db.Execute("delete from Company where CompanyID=" + txtCompanyID.Text + " ") > 0)
-                {
-                    MessageBox.Show("Record Has Been Deleted Successfully!!", "Record Delete", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    txtCategory.Clear();
-                }
-                else
-                {
-                    MessageBox.Show("Record Not Deleted !!", "Delete Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                }
-            }
-        }
-        private void btnCompanyUpdate_Click(object sender, EventArgs e)
-        {
-            if (db.Execute("update  Company set CompanyName='" + txtCompanyName.Text + "' where  CompanyID=" + txtCompanyID.Text + " ") > 0)
-            {
-                MessageBox.Show("Record Has Been Updated Successfully!!", "Record Updated", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                txtCategory.Clear();
-            }
-            else
-            {
-                MessageBox.Show("Record Not Updated !!", "Update Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            }
-        }
-        private void btnCompanyGetdata_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                dataGridViewCompany.Show();
-                reader = db.selectQuery("select * from Company");
-                dataGridViewCompany.Rows.Clear();
-                while (reader.Read())
-                {
-                    dataGridViewCompany.Rows.Add(reader["CompanyID"], reader["CompanyName"], "Edit");
-                }
-                db.ConnectionClose();
-                for (int i = 0; i < dataGridViewCategory.RowCount; i++)
-                {
-                    if (i % 2 != 0)
-                    {
-                        dataGridViewCompany.Rows[i].DefaultCellStyle.BackColor = Color.WhiteSmoke;
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-        private void txtCompanyNew_Click(object sender, EventArgs e)
-        {
-            txtCompanyName.Clear();
-            dataGridViewCompany.Hide();
-            btnCompanySave.Enabled = true;
-            btnCompanyUpdate.Enabled = false;
-            btnCompanyDelete.Enabled = false;
-        }
-        private void dataGridViewCompany_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.ColumnIndex == 2)
-            {
-                txtCompanyID.Text = dataGridViewCompany.Rows[e.RowIndex].Cells[0].Value.ToString();
-                txtCompanyName.Text = dataGridViewCompany.Rows[e.RowIndex].Cells[1].Value.ToString();
-                dataGridViewCompany.Hide();
-                btnCompanyUpdate.Enabled = true;
-                btnCompanySave.Enabled = false;
-                btnCompanyDelete.Enabled = true;
-            }
-        }
-        private void dataGridViewCompany_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.ColumnIndex == 2)
-            {
-                txtCompanyID.Text = dataGridViewCompany.Rows[e.RowIndex].Cells[0].Value.ToString();
-                txtCompanyName.Text = dataGridViewCompany.Rows[e.RowIndex].Cells[1].Value.ToString();
-                dataGridViewCompany.Hide();
-                btnCompanyUpdate.Enabled = true;
-                btnCompanySave.Enabled = false;
-                btnCompanyDelete.Enabled = true;
-            }
-        }
-        #endregion
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -447,6 +235,8 @@ namespace PHMS
         {
             this.Close();
         }
+        #endregion
     }
+
     }
 

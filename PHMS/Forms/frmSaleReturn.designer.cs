@@ -40,26 +40,20 @@
             this.EndDate = new System.Windows.Forms.DateTimePicker();
             this.StartDate = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.label33 = new System.Windows.Forms.Label();
-            this.ddCategory = new System.Windows.Forms.ComboBox();
-            this.ddCompany = new System.Windows.Forms.ComboBox();
             this.ddItems = new System.Windows.Forms.ComboBox();
             this.ddSupplier = new System.Windows.Forms.ComboBox();
             this.dataGridViewPurchaseReturn = new System.Windows.Forms.DataGridView();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.btnClose = new System.Windows.Forms.Button();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewButtonColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.btnClose = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPurchaseReturn)).BeginInit();
             this.panel2.SuspendLayout();
@@ -87,12 +81,8 @@
             this.panel1.Controls.Add(this.EndDate);
             this.panel1.Controls.Add(this.StartDate);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.label17);
             this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.label33);
-            this.panel1.Controls.Add(this.ddCategory);
-            this.panel1.Controls.Add(this.ddCompany);
             this.panel1.Controls.Add(this.ddItems);
             this.panel1.Controls.Add(this.ddSupplier);
             this.panel1.Controls.Add(this.dataGridViewPurchaseReturn);
@@ -106,7 +96,7 @@
             // txtVoucherNo
             // 
             this.txtVoucherNo.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtVoucherNo.Location = new System.Drawing.Point(1011, 80);
+            this.txtVoucherNo.Location = new System.Drawing.Point(645, 82);
             this.txtVoucherNo.Name = "txtVoucherNo";
             this.txtVoucherNo.Size = new System.Drawing.Size(74, 29);
             this.txtVoucherNo.TabIndex = 162;
@@ -120,7 +110,7 @@
             this.btnSearch.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearch.ForeColor = System.Drawing.Color.White;
             this.btnSearch.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSearch.Location = new System.Drawing.Point(1091, 81);
+            this.btnSearch.Location = new System.Drawing.Point(725, 83);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(70, 29);
             this.btnSearch.TabIndex = 161;
@@ -138,7 +128,7 @@
             this.btnPrint.ForeColor = System.Drawing.Color.White;
             this.btnPrint.Image = global::PHMS.Properties.Resources.print;
             this.btnPrint.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPrint.Location = new System.Drawing.Point(1167, 82);
+            this.btnPrint.Location = new System.Drawing.Point(801, 84);
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.Size = new System.Drawing.Size(78, 28);
             this.btnPrint.TabIndex = 160;
@@ -195,22 +185,11 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(1007, 55);
+            this.label2.Location = new System.Drawing.Point(641, 56);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(93, 21);
             this.label2.TabIndex = 152;
             this.label2.Text = "Voucher No ";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.ForeColor = System.Drawing.Color.Black;
-            this.label17.Location = new System.Drawing.Point(824, 56);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(115, 21);
-            this.label17.TabIndex = 152;
-            this.label17.Text = "Select Category";
             // 
             // label6
             // 
@@ -223,17 +202,6 @@
             this.label6.TabIndex = 153;
             this.label6.Text = "Select Items";
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(641, 58);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(118, 21);
-            this.label1.TabIndex = 154;
-            this.label1.Text = "Select Company";
-            // 
             // label33
             // 
             this.label33.AutoSize = true;
@@ -244,32 +212,6 @@
             this.label33.Size = new System.Drawing.Size(118, 21);
             this.label33.TabIndex = 155;
             this.label33.Text = "Select Customer";
-            // 
-            // ddCategory
-            // 
-            this.ddCategory.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.ddCategory.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.ddCategory.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(210)))), ((int)(((byte)(255)))));
-            this.ddCategory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ddCategory.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ddCategory.FormattingEnabled = true;
-            this.ddCategory.Location = new System.Drawing.Point(828, 82);
-            this.ddCategory.Name = "ddCategory";
-            this.ddCategory.Size = new System.Drawing.Size(177, 29);
-            this.ddCategory.TabIndex = 148;
-            // 
-            // ddCompany
-            // 
-            this.ddCompany.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.ddCompany.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.ddCompany.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(210)))), ((int)(((byte)(255)))));
-            this.ddCompany.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ddCompany.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ddCompany.FormattingEnabled = true;
-            this.ddCompany.Location = new System.Drawing.Point(645, 82);
-            this.ddCompany.Name = "ddCompany";
-            this.ddCompany.Size = new System.Drawing.Size(177, 29);
-            this.ddCompany.TabIndex = 149;
             // 
             // ddItems
             // 
@@ -314,8 +256,6 @@
             this.Column2,
             this.Column1,
             this.dataGridViewTextBoxColumn10,
-            this.Column3,
-            this.Column4,
             this.dataGridViewTextBoxColumn12,
             this.dataGridViewButtonColumn4,
             this.Column10});
@@ -323,63 +263,6 @@
             this.dataGridViewPurchaseReturn.Name = "dataGridViewPurchaseReturn";
             this.dataGridViewPurchaseReturn.Size = new System.Drawing.Size(1234, 504);
             this.dataGridViewPurchaseReturn.TabIndex = 142;
-            // 
-            // dataGridViewTextBoxColumn8
-            // 
-            this.dataGridViewTextBoxColumn8.HeaderText = "Voc No";
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            this.dataGridViewTextBoxColumn8.Width = 70;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Date";
-            this.Column2.Name = "Column2";
-            this.Column2.Width = 120;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Customer Name";
-            this.Column1.Name = "Column1";
-            this.Column1.Width = 200;
-            // 
-            // dataGridViewTextBoxColumn10
-            // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dataGridViewTextBoxColumn10.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridViewTextBoxColumn10.HeaderText = "Item Name";
-            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
-            this.dataGridViewTextBoxColumn10.Width = 250;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Category";
-            this.Column3.Name = "Column3";
-            this.Column3.Width = 110;
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Company";
-            this.Column4.Name = "Column4";
-            this.Column4.Width = 110;
-            // 
-            // dataGridViewTextBoxColumn12
-            // 
-            this.dataGridViewTextBoxColumn12.HeaderText = "Quantity";
-            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
-            this.dataGridViewTextBoxColumn12.Width = 120;
-            // 
-            // dataGridViewButtonColumn4
-            // 
-            this.dataGridViewButtonColumn4.HeaderText = "Rate";
-            this.dataGridViewButtonColumn4.Name = "dataGridViewButtonColumn4";
-            this.dataGridViewButtonColumn4.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewButtonColumn4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // Column10
-            // 
-            this.Column10.HeaderText = "Sub Total Amount";
-            this.Column10.Name = "Column10";
-            this.Column10.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
             // panel2
             // 
@@ -408,6 +291,51 @@
             this.btnClose.TabIndex = 140;
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click_1);
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.HeaderText = "Voc No";
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.Width = 70;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Date";
+            this.Column2.Name = "Column2";
+            this.Column2.Width = 120;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Customer Name";
+            this.Column1.Name = "Column1";
+            this.Column1.Width = 200;
+            // 
+            // dataGridViewTextBoxColumn10
+            // 
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dataGridViewTextBoxColumn10.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridViewTextBoxColumn10.HeaderText = "Item Name";
+            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            this.dataGridViewTextBoxColumn10.Width = 250;
+            // 
+            // dataGridViewTextBoxColumn12
+            // 
+            this.dataGridViewTextBoxColumn12.HeaderText = "Quantity";
+            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
+            this.dataGridViewTextBoxColumn12.Width = 120;
+            // 
+            // dataGridViewButtonColumn4
+            // 
+            this.dataGridViewButtonColumn4.HeaderText = "Rate";
+            this.dataGridViewButtonColumn4.Name = "dataGridViewButtonColumn4";
+            this.dataGridViewButtonColumn4.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewButtonColumn4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // Column10
+            // 
+            this.Column10.HeaderText = "Sub Total Amount";
+            this.Column10.Name = "Column10";
+            this.Column10.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
             // frmSaleReturn
             // 
@@ -445,25 +373,19 @@
         internal System.Windows.Forms.Label label55;
         private System.Windows.Forms.DateTimePicker EndDate;
         private System.Windows.Forms.DateTimePicker StartDate;
-        internal System.Windows.Forms.Label label17;
         internal System.Windows.Forms.Label label6;
         internal System.Windows.Forms.Label label33;
-        private System.Windows.Forms.ComboBox ddCategory;
-        private System.Windows.Forms.ComboBox ddCompany;
         private System.Windows.Forms.ComboBox ddItems;
         private System.Windows.Forms.ComboBox ddSupplier;
-        internal System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
         private System.Windows.Forms.TextBox txtVoucherNo;
         internal System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewButtonColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewButtonColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
     }
 }

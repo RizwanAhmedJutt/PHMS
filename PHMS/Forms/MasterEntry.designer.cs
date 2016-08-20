@@ -29,11 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.RightOptions = new System.Windows.Forms.Timer(this.components);
             this.Options = new System.Windows.Forms.Timer(this.components);
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -47,49 +43,6 @@
             this.btnItemDelete = new System.Windows.Forms.Button();
             this.btnItemSave = new System.Windows.Forms.Button();
             this.dataGridViewItemType = new System.Windows.Forms.DataGridView();
-            this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtMinQty = new System.Windows.Forms.TextBox();
-            this.txtPurPrice = new System.Windows.Forms.TextBox();
-            this.txtSalePrice = new System.Windows.Forms.TextBox();
-            this.txtItemName = new System.Windows.Forms.TextBox();
-            this.tabPage6 = new System.Windows.Forms.TabPage();
-            this.txtCategoryID = new System.Windows.Forms.TextBox();
-            this.btnCategoryGetdata = new System.Windows.Forms.Button();
-            this.btnCategoryUpdate = new System.Windows.Forms.Button();
-            this.btnCategoryDelete = new System.Windows.Forms.Button();
-            this.btnCategorySave = new System.Windows.Forms.Button();
-            this.dataGridViewCategory = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewButtonColumn1 = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnCategoryNew = new System.Windows.Forms.Button();
-            this.txtCategory = new System.Windows.Forms.TextBox();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.txtCompanyID = new System.Windows.Forms.TextBox();
-            this.btnCompanyGetdata = new System.Windows.Forms.Button();
-            this.btnCompanyUpdate = new System.Windows.Forms.Button();
-            this.btnCompanyDelete = new System.Windows.Forms.Button();
-            this.btnCompanySave = new System.Windows.Forms.Button();
-            this.dataGridViewCompany = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewButtonColumn2 = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.txtCompanyNew = new System.Windows.Forms.Button();
-            this.txtCompanyName = new System.Windows.Forms.TextBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.btnClose = new System.Windows.Forms.Button();
-            this.label18 = new System.Windows.Forms.Label();
-            this.txtCompName = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.dtExpiryDate = new System.Windows.Forms.DateTimePicker();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -98,16 +51,27 @@
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.dtExpiryDate = new System.Windows.Forms.DateTimePicker();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtMinQty = new System.Windows.Forms.TextBox();
+            this.txtPurPrice = new System.Windows.Forms.TextBox();
+            this.txtCompName = new System.Windows.Forms.TextBox();
+            this.txtSalePrice = new System.Windows.Forms.TextBox();
+            this.txtItemName = new System.Windows.Forms.TextBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.btnClose = new System.Windows.Forms.Button();
+            this.label18 = new System.Windows.Forms.Label();
             this.masterTb.SuspendLayout();
             this.tabPage5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewItemType)).BeginInit();
             this.groupBox6.SuspendLayout();
-            this.tabPage6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCategory)).BeginInit();
-            this.groupBox1.SuspendLayout();
-            this.tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCompany)).BeginInit();
-            this.groupBox2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -131,8 +95,6 @@
             // 
             this.masterTb.Appearance = System.Windows.Forms.TabAppearance.FlatButtons;
             this.masterTb.Controls.Add(this.tabPage5);
-            this.masterTb.Controls.Add(this.tabPage6);
-            this.masterTb.Controls.Add(this.tabPage1);
             this.masterTb.Cursor = System.Windows.Forms.Cursors.Hand;
             this.masterTb.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.masterTb.Location = new System.Drawing.Point(7, 54);
@@ -244,14 +206,14 @@
             // 
             this.dataGridViewItemType.BackgroundColor = System.Drawing.Color.White;
             this.dataGridViewItemType.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewItemType.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewItemType.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridViewItemType.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewItemType.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -269,6 +231,53 @@
             this.dataGridViewItemType.Size = new System.Drawing.Size(643, 487);
             this.dataGridViewItemType.TabIndex = 36;
             this.dataGridViewItemType.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewItemType_CellContentClick);
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Item ID";
+            this.Column1.Name = "Column1";
+            this.Column1.Width = 80;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Item Name";
+            this.Column2.Name = "Column2";
+            this.Column2.Width = 200;
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Sale Price";
+            this.Column4.Name = "Column4";
+            this.Column4.Width = 80;
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "Pur Price";
+            this.Column5.Name = "Column5";
+            this.Column5.Width = 80;
+            // 
+            // Column6
+            // 
+            this.Column6.HeaderText = "Min Qty";
+            this.Column6.Name = "Column6";
+            // 
+            // Column7
+            // 
+            this.Column7.HeaderText = "Company Name";
+            this.Column7.Name = "Column7";
+            this.Column7.Visible = false;
+            // 
+            // Column8
+            // 
+            this.Column8.HeaderText = "Expiry Date";
+            this.Column8.Name = "Column8";
+            this.Column8.Visible = false;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Edit";
+            this.Column3.Name = "Column3";
+            this.Column3.Width = 60;
             // 
             // groupBox6
             // 
@@ -293,6 +302,22 @@
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Item Name Information";
             // 
+            // dtExpiryDate
+            // 
+            this.dtExpiryDate.Location = new System.Drawing.Point(175, 292);
+            this.dtExpiryDate.Name = "dtExpiryDate";
+            this.dtExpiryDate.Size = new System.Drawing.Size(314, 29);
+            this.dtExpiryDate.TabIndex = 4;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(6, 292);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(135, 21);
+            this.label6.TabIndex = 1;
+            this.label6.Text = "Chose Expiry Date";
+            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -307,9 +332,18 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(6, 188);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(113, 21);
+            this.label3.Size = new System.Drawing.Size(151, 21);
             this.label3.TabIndex = 1;
-            this.label3.Text = "Enter Purchase";
+            this.label3.Text = "Enter Purchase Price";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(6, 90);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(163, 21);
+            this.label4.TabIndex = 1;
+            this.label4.Text = "Enter Company Name";
             // 
             // label2
             // 
@@ -347,6 +381,14 @@
             this.txtPurPrice.TabIndex = 2;
             this.txtPurPrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPurPrice_KeyPress);
             // 
+            // txtCompName
+            // 
+            this.txtCompName.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCompName.Location = new System.Drawing.Point(175, 90);
+            this.txtCompName.Name = "txtCompName";
+            this.txtCompName.Size = new System.Drawing.Size(314, 25);
+            this.txtCompName.TabIndex = 1;
+            // 
             // txtSalePrice
             // 
             this.txtSalePrice.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -363,333 +405,6 @@
             this.txtItemName.Name = "txtItemName";
             this.txtItemName.Size = new System.Drawing.Size(314, 25);
             this.txtItemName.TabIndex = 0;
-            // 
-            // tabPage6
-            // 
-            this.tabPage6.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.tabPage6.Controls.Add(this.txtCategoryID);
-            this.tabPage6.Controls.Add(this.btnCategoryGetdata);
-            this.tabPage6.Controls.Add(this.btnCategoryUpdate);
-            this.tabPage6.Controls.Add(this.btnCategoryDelete);
-            this.tabPage6.Controls.Add(this.btnCategorySave);
-            this.tabPage6.Controls.Add(this.dataGridViewCategory);
-            this.tabPage6.Controls.Add(this.groupBox1);
-            this.tabPage6.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabPage6.ForeColor = System.Drawing.Color.Black;
-            this.tabPage6.Location = new System.Drawing.Point(4, 37);
-            this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Size = new System.Drawing.Size(1156, 490);
-            this.tabPage6.TabIndex = 0;
-            this.tabPage6.Text = "Add Drags  Category";
-            // 
-            // txtCategoryID
-            // 
-            this.txtCategoryID.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtCategoryID.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtCategoryID.Location = new System.Drawing.Point(518, 49);
-            this.txtCategoryID.Name = "txtCategoryID";
-            this.txtCategoryID.Size = new System.Drawing.Size(100, 18);
-            this.txtCategoryID.TabIndex = 45;
-            this.txtCategoryID.TabStop = false;
-            // 
-            // btnCategoryGetdata
-            // 
-            this.btnCategoryGetdata.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.btnCategoryGetdata.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCategoryGetdata.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCategoryGetdata.ForeColor = System.Drawing.Color.White;
-            this.btnCategoryGetdata.Location = new System.Drawing.Point(503, 188);
-            this.btnCategoryGetdata.Name = "btnCategoryGetdata";
-            this.btnCategoryGetdata.Size = new System.Drawing.Size(101, 34);
-            this.btnCategoryGetdata.TabIndex = 41;
-            this.btnCategoryGetdata.Text = "Get Data";
-            this.btnCategoryGetdata.UseVisualStyleBackColor = false;
-            this.btnCategoryGetdata.Click += new System.EventHandler(this.btnCategoryGetdata_Click);
-            // 
-            // btnCategoryUpdate
-            // 
-            this.btnCategoryUpdate.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.btnCategoryUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCategoryUpdate.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCategoryUpdate.ForeColor = System.Drawing.Color.White;
-            this.btnCategoryUpdate.Location = new System.Drawing.Point(377, 188);
-            this.btnCategoryUpdate.Name = "btnCategoryUpdate";
-            this.btnCategoryUpdate.Size = new System.Drawing.Size(101, 34);
-            this.btnCategoryUpdate.TabIndex = 42;
-            this.btnCategoryUpdate.Text = "Update";
-            this.btnCategoryUpdate.UseVisualStyleBackColor = false;
-            this.btnCategoryUpdate.Click += new System.EventHandler(this.btnCategoryUpdate_Click);
-            // 
-            // btnCategoryDelete
-            // 
-            this.btnCategoryDelete.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.btnCategoryDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCategoryDelete.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCategoryDelete.ForeColor = System.Drawing.Color.White;
-            this.btnCategoryDelete.Location = new System.Drawing.Point(257, 188);
-            this.btnCategoryDelete.Name = "btnCategoryDelete";
-            this.btnCategoryDelete.Size = new System.Drawing.Size(101, 34);
-            this.btnCategoryDelete.TabIndex = 43;
-            this.btnCategoryDelete.Text = "Delete";
-            this.btnCategoryDelete.UseVisualStyleBackColor = false;
-            this.btnCategoryDelete.Click += new System.EventHandler(this.btnCategoryDelete_Click);
-            // 
-            // btnCategorySave
-            // 
-            this.btnCategorySave.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.btnCategorySave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCategorySave.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCategorySave.ForeColor = System.Drawing.Color.White;
-            this.btnCategorySave.Location = new System.Drawing.Point(137, 188);
-            this.btnCategorySave.Name = "btnCategorySave";
-            this.btnCategorySave.Size = new System.Drawing.Size(101, 34);
-            this.btnCategorySave.TabIndex = 44;
-            this.btnCategorySave.Text = "Save";
-            this.btnCategorySave.UseVisualStyleBackColor = false;
-            this.btnCategorySave.Click += new System.EventHandler(this.btnCategorySave_Click);
-            // 
-            // dataGridViewCategory
-            // 
-            this.dataGridViewCategory.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridViewCategory.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewCategory.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridViewCategory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewCategory.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewButtonColumn1});
-            this.dataGridViewCategory.Cursor = System.Windows.Forms.Cursors.Default;
-            this.dataGridViewCategory.GridColor = System.Drawing.SystemColors.MenuHighlight;
-            this.dataGridViewCategory.Location = new System.Drawing.Point(637, 59);
-            this.dataGridViewCategory.Name = "dataGridViewCategory";
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            this.dataGridViewCategory.RowsDefaultCellStyle = dataGridViewCellStyle3;
-            this.dataGridViewCategory.Size = new System.Drawing.Size(396, 372);
-            this.dataGridViewCategory.TabIndex = 38;
-            this.dataGridViewCategory.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewCategory_CellContentClick);
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.HeaderText = "Category ID";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.Width = 70;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.HeaderText = "Category Name";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.Width = 220;
-            // 
-            // dataGridViewButtonColumn1
-            // 
-            this.dataGridViewButtonColumn1.HeaderText = "Edit";
-            this.dataGridViewButtonColumn1.Name = "dataGridViewButtonColumn1";
-            this.dataGridViewButtonColumn1.Width = 60;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.btnCategoryNew);
-            this.groupBox1.Controls.Add(this.txtCategory);
-            this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.groupBox1.Location = new System.Drawing.Point(124, 59);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(507, 84);
-            this.groupBox1.TabIndex = 37;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Enter Category Name";
-            // 
-            // btnCategoryNew
-            // 
-            this.btnCategoryNew.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.btnCategoryNew.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCategoryNew.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCategoryNew.ForeColor = System.Drawing.Color.White;
-            this.btnCategoryNew.Location = new System.Drawing.Point(417, 34);
-            this.btnCategoryNew.Name = "btnCategoryNew";
-            this.btnCategoryNew.Size = new System.Drawing.Size(82, 29);
-            this.btnCategoryNew.TabIndex = 35;
-            this.btnCategoryNew.Text = "New";
-            this.btnCategoryNew.UseVisualStyleBackColor = false;
-            this.btnCategoryNew.Click += new System.EventHandler(this.btnCategoryNew_Click);
-            // 
-            // txtCategory
-            // 
-            this.txtCategory.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCategory.Location = new System.Drawing.Point(22, 37);
-            this.txtCategory.Name = "txtCategory";
-            this.txtCategory.Size = new System.Drawing.Size(376, 25);
-            this.txtCategory.TabIndex = 0;
-            // 
-            // tabPage1
-            // 
-            this.tabPage1.BackColor = System.Drawing.Color.White;
-            this.tabPage1.Controls.Add(this.txtCompanyID);
-            this.tabPage1.Controls.Add(this.btnCompanyGetdata);
-            this.tabPage1.Controls.Add(this.btnCompanyUpdate);
-            this.tabPage1.Controls.Add(this.btnCompanyDelete);
-            this.tabPage1.Controls.Add(this.btnCompanySave);
-            this.tabPage1.Controls.Add(this.dataGridViewCompany);
-            this.tabPage1.Controls.Add(this.groupBox2);
-            this.tabPage1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabPage1.Location = new System.Drawing.Point(4, 37);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Size = new System.Drawing.Size(1156, 490);
-            this.tabPage1.TabIndex = 7;
-            this.tabPage1.Text = "Add Drags  Company";
-            // 
-            // txtCompanyID
-            // 
-            this.txtCompanyID.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtCompanyID.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtCompanyID.Location = new System.Drawing.Point(506, 52);
-            this.txtCompanyID.Name = "txtCompanyID";
-            this.txtCompanyID.Size = new System.Drawing.Size(100, 18);
-            this.txtCompanyID.TabIndex = 50;
-            this.txtCompanyID.TabStop = false;
-            // 
-            // btnCompanyGetdata
-            // 
-            this.btnCompanyGetdata.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.btnCompanyGetdata.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCompanyGetdata.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCompanyGetdata.ForeColor = System.Drawing.Color.White;
-            this.btnCompanyGetdata.Location = new System.Drawing.Point(499, 186);
-            this.btnCompanyGetdata.Name = "btnCompanyGetdata";
-            this.btnCompanyGetdata.Size = new System.Drawing.Size(101, 34);
-            this.btnCompanyGetdata.TabIndex = 46;
-            this.btnCompanyGetdata.Text = "Get Data";
-            this.btnCompanyGetdata.UseVisualStyleBackColor = false;
-            this.btnCompanyGetdata.Click += new System.EventHandler(this.btnCompanyGetdata_Click);
-            // 
-            // btnCompanyUpdate
-            // 
-            this.btnCompanyUpdate.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.btnCompanyUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCompanyUpdate.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCompanyUpdate.ForeColor = System.Drawing.Color.White;
-            this.btnCompanyUpdate.Location = new System.Drawing.Point(373, 186);
-            this.btnCompanyUpdate.Name = "btnCompanyUpdate";
-            this.btnCompanyUpdate.Size = new System.Drawing.Size(101, 34);
-            this.btnCompanyUpdate.TabIndex = 47;
-            this.btnCompanyUpdate.Text = "Update";
-            this.btnCompanyUpdate.UseVisualStyleBackColor = false;
-            this.btnCompanyUpdate.Click += new System.EventHandler(this.btnCompanyUpdate_Click);
-            // 
-            // btnCompanyDelete
-            // 
-            this.btnCompanyDelete.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.btnCompanyDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCompanyDelete.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCompanyDelete.ForeColor = System.Drawing.Color.White;
-            this.btnCompanyDelete.Location = new System.Drawing.Point(253, 186);
-            this.btnCompanyDelete.Name = "btnCompanyDelete";
-            this.btnCompanyDelete.Size = new System.Drawing.Size(101, 34);
-            this.btnCompanyDelete.TabIndex = 48;
-            this.btnCompanyDelete.Text = "Delete";
-            this.btnCompanyDelete.UseVisualStyleBackColor = false;
-            this.btnCompanyDelete.Click += new System.EventHandler(this.btnCompanyDelete_Click);
-            // 
-            // btnCompanySave
-            // 
-            this.btnCompanySave.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.btnCompanySave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCompanySave.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCompanySave.ForeColor = System.Drawing.Color.White;
-            this.btnCompanySave.Location = new System.Drawing.Point(133, 186);
-            this.btnCompanySave.Name = "btnCompanySave";
-            this.btnCompanySave.Size = new System.Drawing.Size(101, 34);
-            this.btnCompanySave.TabIndex = 49;
-            this.btnCompanySave.Text = "Save";
-            this.btnCompanySave.UseVisualStyleBackColor = false;
-            this.btnCompanySave.Click += new System.EventHandler(this.btnCompanySave_Click_1);
-            // 
-            // dataGridViewCompany
-            // 
-            this.dataGridViewCompany.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridViewCompany.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewCompany.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.dataGridViewCompany.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewCompany.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4,
-            this.dataGridViewButtonColumn2});
-            this.dataGridViewCompany.Cursor = System.Windows.Forms.Cursors.Default;
-            this.dataGridViewCompany.GridColor = System.Drawing.SystemColors.MenuHighlight;
-            this.dataGridViewCompany.Location = new System.Drawing.Point(633, 57);
-            this.dataGridViewCompany.Name = "dataGridViewCompany";
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
-            this.dataGridViewCompany.RowsDefaultCellStyle = dataGridViewCellStyle5;
-            this.dataGridViewCompany.Size = new System.Drawing.Size(396, 376);
-            this.dataGridViewCompany.TabIndex = 45;
-            this.dataGridViewCompany.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewCompany_CellContentClick_1);
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.HeaderText = "Category ID";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.Width = 70;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.HeaderText = "Category Name";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.Width = 220;
-            // 
-            // dataGridViewButtonColumn2
-            // 
-            this.dataGridViewButtonColumn2.HeaderText = "Edit";
-            this.dataGridViewButtonColumn2.Name = "dataGridViewButtonColumn2";
-            this.dataGridViewButtonColumn2.Width = 60;
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.txtCompanyNew);
-            this.groupBox2.Controls.Add(this.txtCompanyName);
-            this.groupBox2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.groupBox2.Location = new System.Drawing.Point(127, 57);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(507, 84);
-            this.groupBox2.TabIndex = 39;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Enter Company Name";
-            // 
-            // txtCompanyNew
-            // 
-            this.txtCompanyNew.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.txtCompanyNew.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.txtCompanyNew.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCompanyNew.ForeColor = System.Drawing.Color.White;
-            this.txtCompanyNew.Location = new System.Drawing.Point(417, 34);
-            this.txtCompanyNew.Name = "txtCompanyNew";
-            this.txtCompanyNew.Size = new System.Drawing.Size(82, 29);
-            this.txtCompanyNew.TabIndex = 35;
-            this.txtCompanyNew.Text = "New";
-            this.txtCompanyNew.UseVisualStyleBackColor = false;
-            this.txtCompanyNew.Click += new System.EventHandler(this.txtCompanyNew_Click);
-            // 
-            // txtCompanyName
-            // 
-            this.txtCompanyName.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCompanyName.Location = new System.Drawing.Point(22, 37);
-            this.txtCompanyName.Name = "txtCompanyName";
-            this.txtCompanyName.Size = new System.Drawing.Size(376, 25);
-            this.txtCompanyName.TabIndex = 0;
             // 
             // panel1
             // 
@@ -740,86 +455,6 @@
             this.label18.Text = "Master Entry Form";
             this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // txtCompName
-            // 
-            this.txtCompName.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCompName.Location = new System.Drawing.Point(175, 90);
-            this.txtCompName.Name = "txtCompName";
-            this.txtCompName.Size = new System.Drawing.Size(314, 25);
-            this.txtCompName.TabIndex = 1;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 90);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(163, 21);
-            this.label4.TabIndex = 1;
-            this.label4.Text = "Enter Company Name";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(6, 292);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(135, 21);
-            this.label6.TabIndex = 1;
-            this.label6.Text = "Chose Expiry Date";
-            // 
-            // dtExpiryDate
-            // 
-            this.dtExpiryDate.Location = new System.Drawing.Point(175, 292);
-            this.dtExpiryDate.Name = "dtExpiryDate";
-            this.dtExpiryDate.Size = new System.Drawing.Size(314, 29);
-            this.dtExpiryDate.TabIndex = 4;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Item ID";
-            this.Column1.Name = "Column1";
-            this.Column1.Width = 80;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Item Name";
-            this.Column2.Name = "Column2";
-            this.Column2.Width = 200;
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Sale Price";
-            this.Column4.Name = "Column4";
-            this.Column4.Width = 80;
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Pur Price";
-            this.Column5.Name = "Column5";
-            this.Column5.Width = 80;
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "Min Qty";
-            this.Column6.Name = "Column6";
-            // 
-            // Column7
-            // 
-            this.Column7.HeaderText = "Company Name";
-            this.Column7.Name = "Column7";
-            this.Column7.Visible = false;
-            // 
-            // Column8
-            // 
-            this.Column8.HeaderText = "Expiry Date";
-            this.Column8.Name = "Column8";
-            this.Column8.Visible = false;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Edit";
-            this.Column3.Name = "Column3";
-            this.Column3.Width = 60;
-            // 
             // frmMasterEntry
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 30F);
@@ -842,16 +477,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewItemType)).EndInit();
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
-            this.tabPage6.ResumeLayout(false);
-            this.tabPage6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCategory)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCompany)).EndInit();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -866,32 +491,6 @@
         private System.Windows.Forms.TextBox textBox1;
 
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
-        public System.Windows.Forms.TextBox txtCompanyName;
-        private System.Windows.Forms.Button txtCompanyNew;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridView dataGridViewCompany;
-        private System.Windows.Forms.Button btnCompanySave;
-        private System.Windows.Forms.Button btnCompanyDelete;
-        private System.Windows.Forms.Button btnCompanyUpdate;
-        private System.Windows.Forms.Button btnCompanyGetdata;
-        private System.Windows.Forms.TextBox txtCompanyID;
-        private System.Windows.Forms.TabPage tabPage1;
-        public System.Windows.Forms.TextBox txtCategory;
-        private System.Windows.Forms.Button btnCategoryNew;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridView dataGridViewCategory;
-        private System.Windows.Forms.Button btnCategorySave;
-        private System.Windows.Forms.Button btnCategoryDelete;
-        private System.Windows.Forms.Button btnCategoryUpdate;
-        private System.Windows.Forms.Button btnCategoryGetdata;
-        private System.Windows.Forms.TextBox txtCategoryID;
-        private System.Windows.Forms.TabPage tabPage6;
         public System.Windows.Forms.TextBox txtItemName;
         public System.Windows.Forms.TextBox txtSalePrice;
         public System.Windows.Forms.TextBox txtPurPrice;

@@ -19,10 +19,9 @@ namespace PHMS
         Validation validate = new Validation();
         SqlDataReader reader;
         frmMain frm;
-        public frmRecivedCash(frmMain frm)
+        public frmRecivedCash()
         {
             InitializeComponent();
-            this.frm = frm;
         }
 
         private void cmdSave_Click(object sender, EventArgs e)

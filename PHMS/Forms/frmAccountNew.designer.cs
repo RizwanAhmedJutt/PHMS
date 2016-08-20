@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.Label3 = new System.Windows.Forms.Label();
             this.Panel3 = new System.Windows.Forms.Panel();
             this.bSave = new System.Windows.Forms.Button();
@@ -36,8 +38,10 @@
             this.btnDelete = new System.Windows.Forms.Button();
             this.xDelete = new System.Windows.Forms.Button();
             this.Panel1 = new System.Windows.Forms.Panel();
-            this.btnClose = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.TabPage1 = new System.Windows.Forms.TabPage();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
@@ -64,6 +68,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txtSerch = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -71,17 +76,16 @@
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
             this.Panel3.SuspendLayout();
             this.Panel1.SuspendLayout();
             this.TabPage1.SuspendLayout();
             this.cc.SuspendLayout();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // Label3
@@ -104,9 +108,9 @@
             this.Panel3.Controls.Add(this.bEdit);
             this.Panel3.Controls.Add(this.btnDelete);
             this.Panel3.Controls.Add(this.xDelete);
-            this.Panel3.Location = new System.Drawing.Point(11, 449);
+            this.Panel3.Location = new System.Drawing.Point(11, 466);
             this.Panel3.Name = "Panel3";
-            this.Panel3.Size = new System.Drawing.Size(864, 59);
+            this.Panel3.Size = new System.Drawing.Size(864, 42);
             this.Panel3.TabIndex = 14;
             // 
             // bSave
@@ -117,7 +121,7 @@
             this.bSave.ForeColor = System.Drawing.Color.White;
             this.bSave.Image = global::PHMS.Properties.Resources.Save_26;
             this.bSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bSave.Location = new System.Drawing.Point(183, 12);
+            this.bSave.Location = new System.Drawing.Point(293, 3);
             this.bSave.Name = "bSave";
             this.bSave.Size = new System.Drawing.Size(104, 36);
             this.bSave.TabIndex = 5;
@@ -131,11 +135,11 @@
             this.bClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bClear.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bClear.ForeColor = System.Drawing.Color.White;
-            this.bClear.Location = new System.Drawing.Point(623, 12);
+            this.bClear.Location = new System.Drawing.Point(183, 3);
             this.bClear.Name = "bClear";
             this.bClear.Size = new System.Drawing.Size(104, 36);
             this.bClear.TabIndex = 6;
-            this.bClear.Text = "Clear";
+            this.bClear.Text = "New";
             this.bClear.UseVisualStyleBackColor = false;
             this.bClear.Click += new System.EventHandler(this.bClear_Click);
             // 
@@ -147,7 +151,7 @@
             this.bEdit.ForeColor = System.Drawing.Color.White;
             this.bEdit.Image = global::PHMS.Properties.Resources.Edit_26;
             this.bEdit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bEdit.Location = new System.Drawing.Point(293, 12);
+            this.bEdit.Location = new System.Drawing.Point(403, 3);
             this.bEdit.Name = "bEdit";
             this.bEdit.Size = new System.Drawing.Size(104, 36);
             this.bEdit.TabIndex = 7;
@@ -163,7 +167,7 @@
             this.btnDelete.ForeColor = System.Drawing.Color.White;
             this.btnDelete.Image = global::PHMS.Properties.Resources.del;
             this.btnDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDelete.Location = new System.Drawing.Point(513, 12);
+            this.btnDelete.Location = new System.Drawing.Point(623, 3);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(104, 36);
             this.btnDelete.TabIndex = 8;
@@ -177,7 +181,7 @@
             this.xDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.xDelete.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.xDelete.ForeColor = System.Drawing.Color.White;
-            this.xDelete.Location = new System.Drawing.Point(403, 12);
+            this.xDelete.Location = new System.Drawing.Point(513, 3);
             this.xDelete.Name = "xDelete";
             this.xDelete.Size = new System.Drawing.Size(104, 36);
             this.xDelete.TabIndex = 8;
@@ -195,26 +199,29 @@
             this.Panel1.Size = new System.Drawing.Size(935, 41);
             this.Panel1.TabIndex = 13;
             // 
-            // btnClose
+            // button1
             // 
-            this.btnClose.BackColor = System.Drawing.Color.Transparent;
-            this.btnClose.BackgroundImage = global::PHMS.Properties.Resources.shutdown;
-            this.btnClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnClose.FlatAppearance.BorderSize = 0;
-            this.btnClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
-            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClose.ForeColor = System.Drawing.Color.Black;
-            this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnClose.Location = new System.Drawing.Point(918, 475);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(39, 41);
-            this.btnClose.TabIndex = 142;
-            this.btnClose.UseVisualStyleBackColor = false;
+            this.button1.BackColor = System.Drawing.Color.Transparent;
+            this.button1.BackgroundImage = global::PHMS.Properties.Resources.close_2;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.Black;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button1.Location = new System.Drawing.Point(896, 0);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(39, 41);
+            this.button1.TabIndex = 174;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // TabPage1
             // 
             this.TabPage1.BackColor = System.Drawing.Color.White;
+            this.TabPage1.Controls.Add(this.label7);
+            this.TabPage1.Controls.Add(this.label6);
             this.TabPage1.Controls.Add(this.label5);
             this.TabPage1.Controls.Add(this.label12);
             this.TabPage1.Controls.Add(this.label13);
@@ -240,10 +247,30 @@
             this.TabPage1.Location = new System.Drawing.Point(4, 22);
             this.TabPage1.Name = "TabPage1";
             this.TabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.TabPage1.Size = new System.Drawing.Size(935, 362);
+            this.TabPage1.Size = new System.Drawing.Size(935, 379);
             this.TabPage1.TabIndex = 0;
             this.TabPage1.Text = "Account Details";
             this.TabPage1.UseVisualStyleBackColor = true;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(586, 357);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(56, 15);
+            this.label7.TabIndex = 171;
+            this.label7.Text = "(Recived)";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(286, 357);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(38, 15);
+            this.label6.TabIndex = 171;
+            this.label6.Text = "(Paid)";
             // 
             // label5
             // 
@@ -469,7 +496,7 @@
             this.cc.Location = new System.Drawing.Point(11, 55);
             this.cc.Name = "cc";
             this.cc.SelectedIndex = 0;
-            this.cc.Size = new System.Drawing.Size(943, 388);
+            this.cc.Size = new System.Drawing.Size(943, 405);
             this.cc.TabIndex = 12;
             // 
             // tabPage2
@@ -481,7 +508,7 @@
             this.tabPage2.ForeColor = System.Drawing.Color.Black;
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Size = new System.Drawing.Size(935, 362);
+            this.tabPage2.Size = new System.Drawing.Size(935, 379);
             this.tabPage2.TabIndex = 4;
             this.tabPage2.Text = "View Account Details";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -530,6 +557,8 @@
             this.Column7,
             this.Column8,
             this.Column5,
+            this.Column10,
+            this.Column11,
             this.Column4,
             this.Column9});
             this.dataGridView1.Location = new System.Drawing.Point(4, 63);
@@ -537,6 +566,15 @@
             this.dataGridView1.Size = new System.Drawing.Size(927, 268);
             this.dataGridView1.TabIndex = 102;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
+            // 
+            // panel2
+            // 
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(958, 517);
+            this.panel2.TabIndex = 15;
             // 
             // Column1
             // 
@@ -570,6 +608,7 @@
             // 
             this.Column8.HeaderText = "Address";
             this.Column8.Name = "Column8";
+            this.Column8.Visible = false;
             this.Column8.Width = 180;
             // 
             // Column5
@@ -577,6 +616,22 @@
             this.Column5.HeaderText = "Status";
             this.Column5.Name = "Column5";
             this.Column5.Width = 50;
+            // 
+            // Column10
+            // 
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Column10.DefaultCellStyle = dataGridViewCellStyle1;
+            this.Column10.HeaderText = "Debit";
+            this.Column10.Name = "Column10";
+            this.Column10.Width = 90;
+            // 
+            // Column11
+            // 
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Column11.DefaultCellStyle = dataGridViewCellStyle2;
+            this.Column11.HeaderText = "Credit";
+            this.Column11.Name = "Column11";
+            this.Column11.Width = 90;
             // 
             // Column4
             // 
@@ -589,34 +644,6 @@
             this.Column9.HeaderText = "Name";
             this.Column9.Name = "Column9";
             this.Column9.Visible = false;
-            // 
-            // panel2
-            // 
-            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.btnClose);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(958, 517);
-            this.panel2.TabIndex = 15;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.Transparent;
-            this.button1.BackgroundImage = global::PHMS.Properties.Resources.close_2;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.Black;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.Location = new System.Drawing.Point(896, 0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(39, 41);
-            this.button1.TabIndex = 174;
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // frmAccountNew
             // 
@@ -642,7 +669,6 @@
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -672,20 +698,10 @@
         private System.Windows.Forms.DateTimePicker dpInvoice;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Button GetData;
         internal System.Windows.Forms.Label label4;
         internal System.Windows.Forms.TextBox txtSerch;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewButtonColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
         internal System.Windows.Forms.Button btnDelete;
         internal System.Windows.Forms.Label label12;
         internal System.Windows.Forms.Label label13;
@@ -696,5 +712,18 @@
         internal System.Windows.Forms.Label label5;
         public System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column11;
+        private System.Windows.Forms.DataGridViewButtonColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
     }
 }

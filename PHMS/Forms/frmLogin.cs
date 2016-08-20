@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Runtime.InteropServices;
 using System.Net.Mail;
+using PHMS.UserControls;
 namespace PHMS
 {
     public partial class frmLogin : Form
@@ -91,9 +92,10 @@ namespace PHMS
                     {
                         frmMain mainfrm = new frmMain();
                         mainfrm.Show();
-                        mainfrm.lblFirstName.Text = userFName+":";
-                        mainfrm.lblLastName.Text = userLName;
-                        mainfrm.lblUserRole.Text = userRole +":";
+                        UcMainManu uc = new UcMainManu();
+                        uc.lblFirstName.Text = userFName + ":";
+                        uc.lblLastName.Text = userLName;
+                        uc.lblUserRole.Text = userRole + ":";
                         this.Hide();
                     }
                     else
@@ -239,6 +241,12 @@ namespace PHMS
                 ReleaseCapture();
                 SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
             }
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            frmDatabaseConfig frm = new frmDatabaseConfig();
+            frm.Show();
         }
 
      

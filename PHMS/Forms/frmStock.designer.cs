@@ -36,15 +36,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnSearch = new System.Windows.Forms.Button();
             this.btnPrint = new System.Windows.Forms.Button();
-            this.label40 = new System.Windows.Forms.Label();
-            this.label55 = new System.Windows.Forms.Label();
-            this.EndDate = new System.Windows.Forms.DateTimePicker();
-            this.StartDate = new System.Windows.Forms.DateTimePicker();
-            this.label17 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.ddCategory = new System.Windows.Forms.ComboBox();
-            this.ddCompany = new System.Windows.Forms.ComboBox();
             this.ddItems = new System.Windows.Forms.ComboBox();
             this.dataGridViewPurchaseReturn = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -75,15 +67,7 @@
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.btnSearch);
             this.panel1.Controls.Add(this.btnPrint);
-            this.panel1.Controls.Add(this.label40);
-            this.panel1.Controls.Add(this.label55);
-            this.panel1.Controls.Add(this.EndDate);
-            this.panel1.Controls.Add(this.StartDate);
-            this.panel1.Controls.Add(this.label17);
             this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.ddCategory);
-            this.panel1.Controls.Add(this.ddCompany);
             this.panel1.Controls.Add(this.ddItems);
             this.panel1.Controls.Add(this.dataGridViewPurchaseReturn);
             this.panel1.Controls.Add(this.panel2);
@@ -102,7 +86,7 @@
             this.btnSearch.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearch.ForeColor = System.Drawing.Color.White;
             this.btnSearch.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSearch.Location = new System.Drawing.Point(975, 83);
+            this.btnSearch.Location = new System.Drawing.Point(348, 83);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(70, 29);
             this.btnSearch.TabIndex = 161;
@@ -120,7 +104,7 @@
             this.btnPrint.ForeColor = System.Drawing.Color.White;
             this.btnPrint.Image = global::PHMS.Properties.Resources.print;
             this.btnPrint.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPrint.Location = new System.Drawing.Point(1051, 84);
+            this.btnPrint.Location = new System.Drawing.Point(424, 84);
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.Size = new System.Drawing.Size(78, 28);
             this.btnPrint.TabIndex = 160;
@@ -128,108 +112,16 @@
             this.btnPrint.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnPrint.UseVisualStyleBackColor = false;
             // 
-            // label40
-            // 
-            this.label40.AutoSize = true;
-            this.label40.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label40.ForeColor = System.Drawing.Color.Black;
-            this.label40.Location = new System.Drawing.Point(215, 56);
-            this.label40.Name = "label40";
-            this.label40.Size = new System.Drawing.Size(72, 21);
-            this.label40.TabIndex = 159;
-            this.label40.Text = "End Date";
-            // 
-            // label55
-            // 
-            this.label55.AutoSize = true;
-            this.label55.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label55.ForeColor = System.Drawing.Color.Black;
-            this.label55.Location = new System.Drawing.Point(11, 56);
-            this.label55.Name = "label55";
-            this.label55.Size = new System.Drawing.Size(78, 21);
-            this.label55.TabIndex = 158;
-            this.label55.Text = "Start Date";
-            // 
-            // EndDate
-            // 
-            this.EndDate.CalendarFont = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EndDate.CustomFormat = "dd/MM/yyyy";
-            this.EndDate.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EndDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.EndDate.Location = new System.Drawing.Point(219, 84);
-            this.EndDate.Name = "EndDate";
-            this.EndDate.Size = new System.Drawing.Size(196, 29);
-            this.EndDate.TabIndex = 157;
-            // 
-            // StartDate
-            // 
-            this.StartDate.CalendarFont = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.StartDate.CustomFormat = "dd/MM/yyyy";
-            this.StartDate.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.StartDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.StartDate.Location = new System.Drawing.Point(15, 82);
-            this.StartDate.Name = "StartDate";
-            this.StartDate.Size = new System.Drawing.Size(185, 29);
-            this.StartDate.TabIndex = 156;
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.ForeColor = System.Drawing.Color.Black;
-            this.label17.Location = new System.Drawing.Point(783, 56);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(115, 21);
-            this.label17.TabIndex = 152;
-            this.label17.Text = "Select Category";
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(417, 55);
+            this.label6.Location = new System.Drawing.Point(7, 56);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(89, 21);
             this.label6.TabIndex = 153;
             this.label6.Text = "Select Items";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(600, 58);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(118, 21);
-            this.label1.TabIndex = 154;
-            this.label1.Text = "Select Company";
-            // 
-            // ddCategory
-            // 
-            this.ddCategory.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.ddCategory.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.ddCategory.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(210)))), ((int)(((byte)(255)))));
-            this.ddCategory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ddCategory.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ddCategory.FormattingEnabled = true;
-            this.ddCategory.Location = new System.Drawing.Point(787, 82);
-            this.ddCategory.Name = "ddCategory";
-            this.ddCategory.Size = new System.Drawing.Size(177, 29);
-            this.ddCategory.TabIndex = 148;
-            // 
-            // ddCompany
-            // 
-            this.ddCompany.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.ddCompany.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.ddCompany.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(210)))), ((int)(((byte)(255)))));
-            this.ddCompany.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ddCompany.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ddCompany.FormattingEnabled = true;
-            this.ddCompany.Location = new System.Drawing.Point(604, 82);
-            this.ddCompany.Name = "ddCompany";
-            this.ddCompany.Size = new System.Drawing.Size(177, 29);
-            this.ddCompany.TabIndex = 149;
             // 
             // ddItems
             // 
@@ -239,11 +131,11 @@
             this.ddItems.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ddItems.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ddItems.FormattingEnabled = true;
-            this.ddItems.Location = new System.Drawing.Point(421, 83);
+            this.ddItems.Location = new System.Drawing.Point(11, 84);
             this.ddItems.Name = "ddItems";
-            this.ddItems.Size = new System.Drawing.Size(177, 29);
+            this.ddItems.Size = new System.Drawing.Size(285, 29);
             this.ddItems.TabIndex = 150;
-    
+            // 
             // dataGridViewPurchaseReturn
             // 
             this.dataGridViewPurchaseReturn.BackgroundColor = System.Drawing.Color.White;
@@ -365,16 +257,8 @@
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Button btnPrint;
-        internal System.Windows.Forms.Label label40;
-        internal System.Windows.Forms.Label label55;
-        private System.Windows.Forms.DateTimePicker EndDate;
-        private System.Windows.Forms.DateTimePicker StartDate;
-        internal System.Windows.Forms.Label label17;
         internal System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ComboBox ddCategory;
-        private System.Windows.Forms.ComboBox ddCompany;
         private System.Windows.Forms.ComboBox ddItems;
-        internal System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;

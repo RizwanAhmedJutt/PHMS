@@ -1,5 +1,6 @@
 ﻿
 using PHMS.Enums;
+using PHMS.Reporting;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -36,17 +37,16 @@ namespace PHMS
             BindItems(comboItem);
             BindItems(ddItems);
             GridSaleDetails.RowTemplate.MinimumHeight = 30;
-            dataGridViewInvoiceNo.RowTemplate.MinimumHeight = 30;
             btnInvoiceUpdate.Enabled = false;
         }
         private void txtQty_TextChanged_1(object sender, EventArgs e)
         {
             try
             {
-                if (txtQty.Text != "" && txtPrice.Text != "")
+                if (!string.IsNullOrEmpty(txtQty.Text) && !string.IsNullOrEmpty(txtPrice.Text))
                 {
 
-                    txtTotalAmount.Text = (Convert.ToDouble(txtQty.Text) * Convert.ToDouble(txtPrice.Text)).ToString();
+                    txtTotalAmount.Text = Decimal.Round(Convert.ToDecimal(txtQty.Text) * Convert.ToDecimal(txtPrice.Text)).ToString();
                     txtQty.BackColor = Color.LightGreen;
                 }
                 else
@@ -109,7 +109,7 @@ namespace PHMS
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+               // MessageBox.Show(ex.Message);
             }
         }
         private void txtQty_KeyPress(object sender, KeyPressEventArgs e)
@@ -120,60 +120,12 @@ namespace PHMS
         {
             validate.DecimalValiation(e, txtPayment);
         }
-        private void txtBillNo_TextChanged(object sender, EventArgs e)
-        {
-            if (string.IsNullOrEmpty(txtBillNo.Text))
-            {
-                VocClear();
-                return;
-            }
-            double tQty = 0;
-            double totWeight = 0;
-            double totTotalAmount = 0;
-            try
-            {
-                using (SqlConnection con = new SqlConnection(db.cs))
-                {
-                    SqlCommand cmd = new SqlCommand("SP_SalesDetails", con);
-                    cmd.Parameters.AddWithValue("@StartDate", DBNull.Value);
-                    cmd.Parameters.AddWithValue("@EndDate",DBNull.Value);
-                    cmd.Parameters.AddWithValue("@CustomerID", DBNull.Value);
-                    cmd.Parameters.AddWithValue("@ItemID", DBNull.Value);
-                    cmd.Parameters.AddWithValue("@InvoiceID", txtBillNo.Text);
-                    cmd.Parameters.AddWithValue("@CategoryID", DBNull.Value);
-                    cmd.Parameters.AddWithValue("@CompanyID", DBNull.Value);
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    con.Open();
-                    reader = cmd.ExecuteReader();
-                    dataGridViewInvoiceNo.Rows.Clear();
-                    while (reader.Read())
-                    {
-                        dataGridViewInvoiceNo.Rows.Add(reader["InvoiceID"], Convert.ToDateTime(reader["InvoiceDate"]).ToString("dd-MM-yyyy"),  reader["CompanyName"], reader["CategoryName"], reader["AcTitle"], reader["ItemName"], reader["Quantity"], reader["Price"], reader["SubTotalAmount"], "Edit", "Delete");
-                        tQty = tQty + Convert.ToDouble(reader["Quantity"]);
-                        totTotalAmount = totTotalAmount + Convert.ToDouble(reader["SubTotalAmount"]);
-                    }
-                    txtInvoiceAmount.Text = "" + totTotalAmount;
-                    con.Close();
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-               // MessageBox.Show("No have about this Vocher No !!!", "No Record Found", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-        }
         private void btnInvoiceSave_Click(object sender, EventArgs e)
         {
             if (comboCusName.Text == "")
             {
                 comboCusName.Focus();
                 MessageBox.Show("Please Select Customer Name", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-            }
-
-            if (comboItem.Text == "")
-            {
-                MessageBox.Show("Please Select product name", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
             if (txtPayment.Text == "")
@@ -196,7 +148,7 @@ namespace PHMS
 
             String Narration = null;
             string cusName = comboCusName.Text;
-
+            atuoKeyGenrate();
             string sql = "Insert into Sales (InvoiceID,InvoiceDate,AcCode,TotalQuantity,SubTotal,Discount,SaleTax,Payment,DuePayment,Comments) Values(" + txtInvoiceId.Text + ",'" + dpInvoice.Value.ToString("yyyy-MM-dd") + "'," + txtCusID.Text + "," + txtCartQty.Text + "," + ((Convert.ToDecimal(txtCartAmount.Text) + Convert.ToDecimal(txtSaleTax.Text)) - Convert.ToDecimal(txtDiscount.Text)) + "," + txtDiscount.Text + "," + txtSaleTax.Text + "," + txtPayment.Text + "," + txtDuePayment.Text + ",'" + txtComments.Text + "')";
             if (db.Execute(sql) > 0)
             {
@@ -230,7 +182,7 @@ namespace PHMS
                     }
                 }
             }
-            if (comboCusName.Text.Trim() != "Cash In Hand" && txtPayment.Text != "" && Convert.ToDouble(txtPayment.Text) != 0)
+            if (Convert.ToInt32(txtCusID.Text) != 1 && txtPayment.Text != "" && Convert.ToDouble(txtPayment.Text) != 0)
             {
                 //Debit Entry for payment entery
                 Narration = "Cash Recive From " + comboCusName.Text + "Against Sale VocNo:" + txtInvoiceId.Text;
@@ -262,16 +214,16 @@ namespace PHMS
             {
                 try
                 {
-                    comboItem.SelectedValue = dataGridViewShopingCart.Rows[e.RowIndex].Cells[5].Value.ToString();
-                    txtQty.Text = dataGridViewShopingCart.Rows[e.RowIndex].Cells[7].Value.ToString();
-                    txtPrice.Text = dataGridViewShopingCart.Rows[e.RowIndex].Cells[8].Value.ToString();
-                    txtTotalAmount.Text = dataGridViewShopingCart.Rows[e.RowIndex].Cells[9].Value.ToString();
+                    comboItem.SelectedValue = dataGridViewShopingCart.Rows[e.RowIndex].Cells[1].Value.ToString();
+                    txtQty.Text = dataGridViewShopingCart.Rows[e.RowIndex].Cells[3].Value.ToString();
+                    txtPrice.Text = dataGridViewShopingCart.Rows[e.RowIndex].Cells[4].Value.ToString();
+                    txtTotalAmount.Text = dataGridViewShopingCart.Rows[e.RowIndex].Cells[5].Value.ToString();
                     dataGridViewShopingCart.Rows.RemoveAt(e.RowIndex);
                     countCartCount();
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Please Select any Row Then Pess It", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
         }
@@ -279,10 +231,10 @@ namespace PHMS
         {
             db.Execute("delete from Temp");
             db.Execute("insert into Temp (F1) values(" + DataHolder.InvoiceNo + ")");
-            //frmReport frm = new frmReport();
-            //frm.rptViewer.ReportSource = new Invoice();
-            //frm.Text = "Inovice";
-            //frm.Show();
+            frmReport frm = new frmReport();
+            frm.rptViewer.ReportSource = new Invoice();
+            frm.Text = "Inovice";
+            frm.Show();
         }
         private void btnInvoiceUpdate_Click(object sender, EventArgs e)
         {
@@ -297,18 +249,17 @@ namespace PHMS
                         {
                             if (Convert.ToBoolean(dataGridViewShopingCart.Rows[i].Cells[0].Value) == false)
                             {
-                                String sql2 = "Insert into SalesDetails (InvoiceID,CompanyID,CategoryID,ItemCode,ItemDescription,Quantity,Price,SubTotalAmount) Values(" + txtInvoiceId.Text + "," + dataGridViewShopingCart.Rows[i].Cells[2].Value + "," + dataGridViewShopingCart.Rows[i].Cells[4].Value + "," + dataGridViewShopingCart.Rows[i].Cells[5].Value + ",'" + dataGridViewShopingCart.Rows[i].Cells[6].Value + "'," + dataGridViewShopingCart.Rows[i].Cells[7].Value + "," + dataGridViewShopingCart.Rows[i].Cells[8].Value + "," + dataGridViewShopingCart.Rows[i].Cells[9].Value + ")";
+                                String sql2 = "Insert into SalesDetails (InvoiceID,ItemCode,ItemDescription,Quantity,Price,SubTotalAmount) Values(" + txtInvoiceId.Text + "," + dataGridViewShopingCart.Rows[i].Cells[1].Value + ",'" + dataGridViewShopingCart.Rows[i].Cells[2].Value + "'," + dataGridViewShopingCart.Rows[i].Cells[3].Value + "," + dataGridViewShopingCart.Rows[i].Cells[4].Value + "," + dataGridViewShopingCart.Rows[i].Cells[5].Value + ")";
                                 db.Execute(sql2);
                             }
                             else
                             {
-                                String sql2 = "insert into SaleReturn(VocNo,date,CompanyID,CategoryID,ItemCode,Quantity,Rate,SubTotalAmount,CustomerID) values(" + txtInvoiceId.Text + ",'" + dpInvoice.Value.ToString("yyyy-MM-dd") + "'," + dataGridViewShopingCart.Rows[i].Cells[2].Value + "," + dataGridViewShopingCart.Rows[i].Cells[4].Value + "," + dataGridViewShopingCart.Rows[i].Cells[5].Value + "," + dataGridViewShopingCart.Rows[i].Cells[7].Value + "," + dataGridViewShopingCart.Rows[i].Cells[8].Value + "," + dataGridViewShopingCart.Rows[i].Cells[9].Value + "," + comboCusName.SelectedValue + ")";
+                                String sql2 = "insert into SaleReturn(VocNo,date,ItemCode,Quantity,Rate,SubTotalAmount,CustomerID) values(" + txtInvoiceId.Text + ",'" + dpInvoice.Value.ToString("yyyy-MM-dd") + "'," + dataGridViewShopingCart.Rows[i].Cells[1].Value + "," + dataGridViewShopingCart.Rows[i].Cells[3].Value + "," + dataGridViewShopingCart.Rows[i].Cells[4].Value + "," + dataGridViewShopingCart.Rows[i].Cells[5].Value + "," + comboCusName.SelectedValue + ")";
                                 db.Execute(sql2);
                             }
                         }
                     // MessageBox.Show("Insert");
-
-
+                   
                 }
                 string Narration = "(" + comboItem.Text + ") Sale To  A/C " + comboCusName.Text + " @Rate Rs: " + txtPrice.Text + "Bill:" + txtInvoiceId.Text;
 
@@ -319,12 +270,12 @@ namespace PHMS
                     String sql5 = "update  VoucherDetails set  Debit=0,Credit=" + txtCartAmount.Text + ", Narration='" + Narration + "' where VocNo=" + txtInvoiceId.Text + " AND VocType='" + VoucherType.SV + "' AND AcCode="+(int)Accounts.SalesAccount+"";
                     db.Execute(sql5);
 
-                    if (txtPayment.Text != "" && comboCusName.Text.Trim() != "Cash In Hand")
+                    if (txtPayment.Text != "" && Convert.ToInt32(txtPayment.Text) != 0 && Convert.ToInt32(txtCusID.Text) != 1)
                     {
 
                         //Debit Entry for payment entery
                         string Narr = "Cash Recive From " + comboCusName.Text + " Against " + comboItem.Text + " InvoiceNo:" + txtInvoiceId.Text;
-                        string sql6 = "update VoucherDetails set Debit=" + txtPayment.Text + ",Credit=0,Narration='" + Narr + "' where  VocNo=" + txtInvoiceId.Text + " AND VocType='" + VoucherType.SV + "' AND AcCode=" + (int)Accounts.CashInHand + "";
+                        string sql6 = "update VoucherDetails set Debit=" + txtPayment.Text + ",Narration='" + Narr + "' where  VocNo=" + txtInvoiceId.Text + " AND VocType='" + VoucherType.SV + "' AND AcCode=" + (int)Accounts.CashInHand + " AND Credit=0";
                         string sql7 = "update VoucherDetails set Credit=" + txtPayment.Text + ",Narration='" + Narr + "' where  VocNo=" + txtInvoiceId.Text + " AND VocType='" + VoucherType.SV + "' AND AcCode=" + txtCusID.Text + " AND Debit=0";
                         if (db.Execute(sql7) > 0 && db.Execute(sql6) > 0)
                         {
@@ -333,7 +284,7 @@ namespace PHMS
                         else
                         {
                             String Narration2 = "Cash Recive From " + comboCusName.Text + " Against " + comboItem.Text + "Sale VocNo:" + txtInvoiceId.Text;
-                            //Debit Entry for payment
+                            //Debit Entry for payment 
                             sql6 = "insert into VoucherDetails(VocNo,VocType,AcCode,Debit,Credit,Narration) values(" + txtInvoiceId.Text + ",'" + VoucherType.SV + "',1," + txtPayment.Text + ",0,'" + Narration2 + "')";
                             db.Execute(sql6);
                             //Credit Entry for payment
@@ -387,13 +338,13 @@ namespace PHMS
         {
             try
             {
-                if (txtCartAmount.Text.Trim() != "" && txtPayment.Text.Trim() != "")
+                if (!string.IsNullOrEmpty(txtCartAmount.Text) && !string.IsNullOrEmpty(txtPayment.Text))
                 {
                     double totalAmount = (Convert.ToDouble(txtCartAmount.Text) + Convert.ToDouble(txtSaleTax.Text));
                     double payAmount = (Convert.ToDouble(txtPayment.Text) - Convert.ToDouble(txtDiscount.Text));
                     if (payAmount < totalAmount)
                     {
-                        txtDuePayment.Text = String.Format("{0:0}", ((Convert.ToDouble(txtCartAmount.Text) + Convert.ToDouble(txtSaleTax.Text)) - (Convert.ToDouble(txtDiscount.Text) + Convert.ToDouble(txtPayment.Text))));
+                        txtDuePayment.Text = Decimal.Round(((Convert.ToDecimal(txtCartAmount.Text) + Convert.ToDecimal(txtSaleTax.Text)) - (Convert.ToDecimal(txtDiscount.Text) + Convert.ToDecimal(txtPayment.Text)))).ToString();
                     }
                     else
                     {
@@ -439,7 +390,7 @@ namespace PHMS
             {
                 if (txtCartAmount.Text != "" && txtDiscount.Text != "" && txtCartAmount.Text != "")
                 {
-                    txtPayment.Text = (Convert.ToDecimal(txtCartAmount.Text) - Convert.ToDecimal(txtDiscount.Text) + Convert.ToDecimal(txtCartAmount.Text)).ToString();
+                    txtPayment.Text = Decimal.Round(Convert.ToDecimal(txtCartAmount.Text) - Convert.ToDecimal(txtDiscount.Text) + Convert.ToDecimal(txtCartAmount.Text)).ToString();
                 }
                 else
                 {
@@ -449,97 +400,6 @@ namespace PHMS
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-            }
-        }
-        private void dataGridViewInvoiceNo_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.ColumnIndex == 9)
-            {
-                string sql = "select * from Sales where InvoiceID = " + dataGridViewInvoiceNo.Rows[e.RowIndex].Cells[0].Value + "";
-                string sql2 = "select * from SalesDetails where InvoiceID = " + dataGridViewInvoiceNo.Rows[e.RowIndex].Cells[0].Value + "";
-                try
-                {
-                    using (SqlConnection con = new SqlConnection(db.cs))
-                    {
-                        SqlCommand cmd = new SqlCommand("SP_SalesDetails", con);
-                        cmd.Parameters.AddWithValue("@StartDate", DBNull.Value);
-                        cmd.Parameters.AddWithValue("@EndDate", DBNull.Value);
-                        cmd.Parameters.AddWithValue("@CustomerID", DBNull.Value);
-                        cmd.Parameters.AddWithValue("@ItemID", DBNull.Value);
-                        cmd.Parameters.AddWithValue("@InvoiceID", dataGridViewInvoiceNo.Rows[e.RowIndex].Cells[0].Value);
-                        cmd.Parameters.AddWithValue("@CategoryID", DBNull.Value);
-                        cmd.Parameters.AddWithValue("@CompanyID", DBNull.Value);
-                        cmd.CommandType = CommandType.StoredProcedure;
-                        con.Open();
-                        reader = cmd.ExecuteReader();
-                        dataGridViewShopingCart.Rows.Clear();
-                        while (reader.Read())
-                        {
-                            dataGridViewShopingCart.Rows.Add(false, reader["CompanyName"], reader["CompanyID"], reader["CategoryName"], reader["CategoryID"], reader["ItemCode"], reader["ItemName"], reader["Quantity"], reader["Price"], reader["SubTotalAmount"], "Edit");
-                        }
-                        con.Close();
-                    }
-                    countCartCount();
-
-                    reader = db.selectQuery(sql);
-                    if (reader.Read())
-                    {
-                        txtInvoiceId.Text = reader["InvoiceID"].ToString();
-                        DataHolder.InvoiceNo = Convert.ToInt32(reader["InvoiceID"]);
-                        dpInvoice.Value = Convert.ToDateTime(reader["InvoiceDate"]);
-                        txtCusID.Text = reader["AcCode"].ToString();
-                        //comboCusName.Text = reader["CustomerName"].ToString();
-                        txtDiscount.Text = reader["Discount"].ToString();
-                        txtSaleTax.Text = reader["SaleTax"].ToString();
-                        txtPayment.Text = reader["Payment"].ToString();
-                        txtDuePayment.Text = reader["DuePayment"].ToString();
-                        txtComments.Text = reader["Comments"].ToString();
-                    }
-                    tabPage5.Hide();
-                    tabPage1.Show();
-                    tabPage1.Focus();
-                    btnInvoiceSave.Enabled = false;
-                    btnInvoiceUpdate.Enabled = true;
-                }
-                catch (Exception ex)
-                {
-
-                    MessageBox.Show(ex.Message);
-                }
-
-
-            }
-            if (e.ColumnIndex == 10)
-            {
-                try
-                {
-                    DialogResult dig = MessageBox.Show("Really you want to delete this record !!!!!", "Delete Record Information", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
-                    if (dig == DialogResult.Yes)
-                    {
-                        string sql = "delete from ItemInfo_tb where InvoiceID =" + dataGridViewInvoiceNo.Rows[e.RowIndex].Cells[0].Value + "";
-                        if (db.Execute(sql) > 0)
-                        {
-                            sql = "delete from CustomerInfo_tb where InvoiceID = " + dataGridViewInvoiceNo.Rows[e.RowIndex].Cells[0].Value + " ";
-                            db.Execute(sql);
-                            sql = "delete from VoucherDetails where VocNo=" + dataGridViewInvoiceNo.Rows[e.RowIndex].Cells[0].Value + " AND VocType = '" + VoucherType.SV + "'";
-                            db.Execute(sql);
-                            sql = "delete from Vouchers where VocNo=" + dataGridViewInvoiceNo.Rows[e.RowIndex].Cells[0].Value + " AND VocType = '" + VoucherType.SV + "' ";
-                            db.Execute(sql);
-                            sql = "delete from SaleReturn where VocNo=" + dataGridViewInvoiceNo.Rows[e.RowIndex].Cells[0].Value + "";
-                            db.Execute(sql);
-                            MessageBox.Show("Record Deleted Successfully !!!", "Record Deleted", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            VocClear();
-                        }
-                        else
-                        {
-                            MessageBox.Show("Record Not Deleted!!!", "Record Deleted", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        }
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
             }
         }
         private void btnPrint_Click_1(object sender, EventArgs e)
@@ -567,7 +427,7 @@ namespace PHMS
             {
                 if (txtCartAmount.Text != "" && txtSaleTax.Text != "" && txtCartAmount.Text != "")
                 {
-                    txtPayment.Text = (Convert.ToDecimal(txtCartAmount.Text) + Convert.ToDecimal(txtSaleTax.Text) - Convert.ToDecimal(txtDiscount.Text)).ToString();
+                    txtPayment.Text = Decimal.Round(Convert.ToDecimal(txtCartAmount.Text) + Convert.ToDecimal(txtSaleTax.Text) - Convert.ToDecimal(txtDiscount.Text)).ToString();
                 }
                 else
                 {
@@ -586,18 +446,18 @@ namespace PHMS
                 using (SqlConnection con = new SqlConnection(db.cs))
                 {
                     SqlCommand cmd = new SqlCommand("SP_SalesDetails", con);
-                    cmd.Parameters.AddWithValue("@StartDate", StartDate.Value);
-                    cmd.Parameters.AddWithValue("@EndDate", EndDate.Value);
+                    cmd.Parameters.AddWithValue("@StartDate", string.IsNullOrEmpty(StartDate.Text) ? (object)DBNull.Value : StartDate.Value);
+                    cmd.Parameters.AddWithValue("@EndDate", string.IsNullOrEmpty(EndDate.Text) ? (object)DBNull.Value : EndDate.Value);
                     cmd.Parameters.AddWithValue("@CustomerID", DBNull.Value);
                     cmd.Parameters.AddWithValue("@ItemID", string.IsNullOrEmpty(ddItems.SelectedValue.ToString()) ? (object)DBNull.Value : ddItems.SelectedValue);
-                    cmd.Parameters.AddWithValue("@InvoiceID", DBNull.Value);
+                    cmd.Parameters.AddWithValue("@InvoiceID", string.IsNullOrEmpty(txtBillNo.Text) ?(object) DBNull.Value : txtBillNo.Text);
                     cmd.CommandType = CommandType.StoredProcedure;
                     con.Open();
                     reader = cmd.ExecuteReader();
                     GridSaleDetails.Rows.Clear();
                     while (reader.Read())
                     {
-                        GridSaleDetails.Rows.Add(reader["InvoiceID"], reader["InvoiceDate"], reader["CompanyName"], reader["CategoryName"], reader["AcTitle"], reader["ItemName"], reader["Quantity"], reader["Price"], reader["SubTotalAmount"]);
+                        GridSaleDetails.Rows.Add(reader["InvoiceID"], reader["InvoiceDate"], reader["CompanyName"],reader["AcTitle"], reader["ItemName"], reader["Quantity"], reader["Price"], reader["SubTotalAmount"],"Edit","Delete");
                     }
                     con.Close();
                 }
@@ -611,18 +471,26 @@ namespace PHMS
         #region Mathods
         public void atuoKeyGenrate()
         {
-            string sql = "select max(InvoiceID) from Sales";
-            reader = db.selectQuery(sql);
-            if (reader.Read())
+            try
             {
-                if (Convert.ToString(reader[0]) != "")
+                string sql = "select max(InvoiceID) from Sales";
+                reader = db.selectQuery(sql);
+                if (reader.Read())
                 {
-                    txtInvoiceId.Text = "" + (Convert.ToInt64(reader[0]) + 1);
+                    if (Convert.ToString(reader[0]) != "")
+                    {
+                        txtInvoiceId.Text = "" + (Convert.ToInt64(reader[0]) + 1);
+                    }
+                    else
+                    {
+                        txtInvoiceId.Text = 1 + "";
+                    }
                 }
-                else
-                {
-                    txtInvoiceId.Text = 1 + "";
-                }
+            }
+            catch (Exception)
+            {
+                
+                throw;
             }
         }
         public void BindCustomer(ComboBox customer)
@@ -673,7 +541,7 @@ namespace PHMS
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+               // MessageBox.Show(ex.Message);
             }
         }
         public void txtClear()
@@ -703,7 +571,7 @@ namespace PHMS
         private void countCartCount()
         {
             int i, j = 0;
-            double cartAmount, cartQty;
+            decimal cartAmount, cartQty;
             cartAmount = cartQty = 0;
             try
             {
@@ -712,13 +580,13 @@ namespace PHMS
                 {
                     if (Convert.ToBoolean(dataGridViewShopingCart.Rows[i].Cells[0].Value) == false)
                     {
-                        cartQty = cartQty + Convert.ToDouble(dataGridViewShopingCart.Rows[i].Cells[3].Value.ToString());
-                        cartAmount = cartAmount + Convert.ToDouble(dataGridViewShopingCart.Rows[i].Cells[5].Value.ToString());
+                        cartQty = cartQty + Convert.ToDecimal(dataGridViewShopingCart.Rows[i].Cells[3].Value.ToString());
+                        cartAmount = cartAmount + Convert.ToDecimal(dataGridViewShopingCart.Rows[i].Cells[5].Value.ToString());
                     }
                 }
-                txtCartAmount.Text = Math.Round(cartAmount, 0).ToString();
-                txtCartQty.Text = cartQty.ToString();
-                txtPayment.Text = Math.Round(cartAmount, 0).ToString();
+                txtCartAmount.Text = Decimal.Round(cartAmount, 0).ToString();
+                txtCartQty.Text = Decimal.Round(cartQty).ToString();
+                txtPayment.Text = Decimal.Round(cartAmount, 0).ToString();
             }
             catch (Exception ex)
             {
@@ -820,11 +688,6 @@ namespace PHMS
                 MessageBox.Show(ex.Message);
             }
         }
-        private void VocClear()
-        {
-            dataGridViewInvoiceNo.Rows.Clear();
-            txtInvoiceAmount.Clear();
-        }
         private void GetStock()
         {
             double purQty, saleQty, purWt, saleWt;
@@ -866,6 +729,146 @@ namespace PHMS
         private void btnClose_Click_1(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnMin_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void txtQty_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                AddToCart();
+            }
+        }
+
+        private void comboItem_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                txtQty.Focus();
+            }
+        }
+
+        private void GridSaleDetails_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            string cusName = null;
+            if (e.ColumnIndex == 8)
+            {
+                string sql = "select * from Sales where InvoiceID = " + GridSaleDetails.Rows[e.RowIndex].Cells[0].Value + "";
+                try
+                {
+                    using (SqlConnection con = new SqlConnection(db.cs))
+                    {
+                        SqlCommand cmd = new SqlCommand("SP_SalesDetails", con);
+                        cmd.Parameters.AddWithValue("@StartDate", DBNull.Value);
+                        cmd.Parameters.AddWithValue("@EndDate", DBNull.Value);
+                        cmd.Parameters.AddWithValue("@CustomerID", DBNull.Value);
+                        cmd.Parameters.AddWithValue("@ItemID", DBNull.Value);
+                        cmd.Parameters.AddWithValue("@InvoiceID", GridSaleDetails.Rows[e.RowIndex].Cells[0].Value);
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        con.Open();
+                        reader = cmd.ExecuteReader();
+                        dataGridViewShopingCart.Rows.Clear();
+                        while (reader.Read())
+                        {
+                            dataGridViewShopingCart.Rows.Add(false, reader["ItemCode"], reader["ItemName"], reader["Quantity"], reader["Price"], reader["SubTotalAmount"], "Edit");
+                            cusName = reader["AcTitle"].ToString();
+                        }
+                        con.Close();
+                    }
+                    countCartCount();
+
+                    reader = db.selectQuery(sql);
+                    if (reader.Read())
+                    {
+                        txtInvoiceId.Text = reader["InvoiceID"].ToString();
+                        DataHolder.InvoiceNo = Convert.ToInt32(reader["InvoiceID"]);
+                        dpInvoice.Value = Convert.ToDateTime(reader["InvoiceDate"]);
+                        txtCusID.Text = reader["AcCode"].ToString();
+                        comboCusName.Text = cusName;
+                        txtDiscount.Text = reader["Discount"].ToString();
+                        txtSaleTax.Text = reader["SaleTax"].ToString();
+                        txtPayment.Text = reader["Payment"].ToString();
+                        txtDuePayment.Text = reader["DuePayment"].ToString();
+                        txtComments.Text = reader["Comments"].ToString();
+                    }
+                    tabPage2.Hide();
+                    tabPage1.Show();
+                    tabPage1.Focus();
+                    btnInvoiceSave.Enabled = false;
+                    btnInvoiceUpdate.Enabled = true;
+                }
+                catch (Exception ex)
+                {
+
+                    MessageBox.Show(ex.Message);
+                }
+
+
+            }
+            if (e.ColumnIndex == 9)
+            {
+                try
+                {
+                    DialogResult dig = MessageBox.Show("Really you want to delete this record !!!!!", "Delete Record Information", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                    if (dig == DialogResult.Yes)
+                    {
+                        string sql = "delete from ItemInfo_tb where InvoiceID =" + GridSaleDetails.Rows[e.RowIndex].Cells[0].Value + "";
+                        if (db.Execute(sql) > 0)
+                        {
+                            sql = "delete from CustomerInfo_tb where InvoiceID = " + GridSaleDetails.Rows[e.RowIndex].Cells[0].Value + " ";
+                            db.Execute(sql);
+                            sql = "delete from VoucherDetails where VocNo=" + GridSaleDetails.Rows[e.RowIndex].Cells[0].Value + " AND VocType = '" + VoucherType.SV + "'";
+                            db.Execute(sql);
+                            sql = "delete from Vouchers where VocNo=" + GridSaleDetails.Rows[e.RowIndex].Cells[0].Value + " AND VocType = '" + VoucherType.SV + "' ";
+                            db.Execute(sql);
+                            sql = "delete from SaleReturn where VocNo=" + GridSaleDetails.Rows[e.RowIndex].Cells[0].Value + "";
+                            db.Execute(sql);
+                            MessageBox.Show("Record Deleted Successfully !!!", "Record Deleted", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Record Not Deleted!!!", "Record Deleted", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+        }
+
+        private void txtPayment_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnAdd.Focus();
+            }
+        }
+
+        private void txtPrice_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (!string.IsNullOrEmpty(txtQty.Text) && !string.IsNullOrEmpty(txtPrice.Text))
+                {
+
+                    txtTotalAmount.Text = Decimal.Round(Convert.ToDecimal(txtQty.Text) * Convert.ToDecimal(txtPrice.Text)).ToString();
+                    txtQty.BackColor = Color.LightGreen;
+                }
+                else
+                {
+                    txtTotalAmount.Text = 0 + "";
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

@@ -25,8 +25,6 @@ namespace PHMS
         private void frmEmployee_Load(object sender, EventArgs e)
         {
             dataGridViewPurchaseReturn.RowTemplate.MinimumHeight = 25;
-            db.BindCategory(ddCategory);
-            db.BindCompany(ddCompany);
             db.BindItems(ddItems);
         }
         public void BindCustomer(ComboBox customer)
@@ -58,12 +56,8 @@ namespace PHMS
             {
                 using (SqlConnection con = new SqlConnection(db.cs))
                 {
-                    SqlCommand cmd = new SqlCommand("SP_Stock", con);
-                    cmd.Parameters.AddWithValue("@StartDate", StartDate.Value.ToString("MM-dd-yyyy"));
-                    cmd.Parameters.AddWithValue("@EndDate", EndDate.Value.ToString("MM-dd-yyyy"));
-                    cmd.Parameters.AddWithValue("@ItemCode", string.IsNullOrEmpty(ddItems.SelectedValue.ToString()) ? (object)DBNull.Value : ddItems.SelectedValue);
-                    cmd.Parameters.AddWithValue("@CategoryID", (ddCategory.SelectedValue.ToString() == "0") ? (object)DBNull.Value : ddCategory.SelectedValue);
-                    cmd.Parameters.AddWithValue("@CompanyID", (ddCompany.SelectedValue.ToString() == "0") ? (object)DBNull.Value : ddCompany.SelectedValue);
+                    SqlCommand cmd = new SqlCommand("SP_GetStock", con);                
+                    cmd.Parameters.AddWithValue("@ItemCode", string.IsNullOrEmpty(ddItems.SelectedValue.ToString()) ? (object)DBNull.Value : ddItems.SelectedValue);              
                     cmd.CommandType = CommandType.StoredProcedure;
                     con.Open();
                     reader = cmd.ExecuteReader();

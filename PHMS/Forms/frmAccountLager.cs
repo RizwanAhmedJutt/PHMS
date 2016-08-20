@@ -1,4 +1,5 @@
 ﻿
+using PHMS.Reporting;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -161,11 +162,11 @@ namespace PHMS
                 {
                     db.Execute("insert into showReport_tb (VocNo,VocDate,Naration,Debit,Credit,Balance,AcTitle,DateTo,DateFrom) values('" + Grid.Rows[i].Cells[0].Value + "','" + Grid.Rows[i].Cells[1].Value + "','" + Grid.Rows[i].Cells[2].Value + "'," + Grid.Rows[i].Cells[3].Value + "," + Grid.Rows[i].Cells[4].Value + "," + Grid.Rows[i].Cells[5].Value + ",'" + comboAcTitle.Text + "','" + dpTo.Value.ToString("yyyy.MM.dd") + "','" + dpFrom.Value.ToString("yyyy.MM.dd") + "')");
                 }
-                //frmReport frm = new frmReport();
-                //frm.Text = "Account Lager Report";
-                //frm.rptViewer.ReportSource = @"D:/MyPro/Copy Of Zaid & Hassan Bartan/Reporting/AccountLagerRpt.rpt";
-                //frm.rptViewer.Refresh();
-                //frm.Show(); 
+                frmReport frm = new frmReport();
+                frm.Text = "Account Lager Report";
+                frm.rptViewer.ReportSource = new AccountLagerRpt();
+                frm.rptViewer.Refresh();
+                frm.Show(); 
             }  
             catch (Exception ex)
             {

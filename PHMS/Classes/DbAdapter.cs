@@ -1,21 +1,51 @@
-﻿ using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 using System.Data;
+using System.Xml;
 namespace PHMS
 {
     class DbAdapter
     {
-        public String cs = @"Data Source=HAIER-PC\SQLEXPRESS;Initial Catalog=PHMS;Integrated Security=True";
+        //public String cs = @"Data Source=HAIER-PC\SQLEXPRESS;Initial Catalog=OMMS;Integrated Security=True";
         Validation validate = new Validation();
         public SqlConnection conn;
         SqlCommand cmd;
         SqlDataReader reader;
 
-     
+        public string cs
+        {
+            get
+            {
+                return getConnection();
+            }
+        }
+
+        private string getConnection()
+        {
+            string hostname, dbname;
+                hostname = dbname = null;
+            try
+            {
+                XmlDocument xDoc = new XmlDocument();
+                xDoc.Load("config.xml");
+                foreach (XmlNode item in xDoc.DocumentElement)
+                {
+                    hostname = item.Attributes["HostName"].Value;
+                    dbname = item.Attributes["Name"].Value;
+                }
+                return @"Data Source=" + hostname+";Initial Catalog="+dbname+";Integrated Security=True";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return null;
+            }
+        }
+
         /*#################################  Mathod For Deletion From Database  ################################### */
         public int Execute(String query)
         {
@@ -34,23 +64,23 @@ namespace PHMS
             }
 
             return rowsAffected;
-        }      
+        }
         /*#################################   Mathod For Selection From Database  ################################### */
         public SqlDataReader selectQuery(String query)
         {
-                conn = new SqlConnection(cs);
-                cmd = new SqlCommand(query, conn);
-                try
-                {
-                    conn.Open();
-                    reader = cmd.ExecuteReader();
-                    return reader;
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                    return null;
-                }
+            conn = new SqlConnection(cs);
+            cmd = new SqlCommand(query, conn);
+            try
+            {
+                conn.Open();
+                reader = cmd.ExecuteReader();
+                return reader;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return null;
+            }
         }
         /*#################################   Mathod For Selection From Database  ################################### */
         public DataTable selectDatatable(String query)
@@ -64,7 +94,7 @@ namespace PHMS
                     DataTable dt = new DataTable();
                     adt.Fill(dt);
                     return dt;
-                    
+
                 }
                 catch (Exception ex)
                 {
@@ -114,7 +144,7 @@ namespace PHMS
                 category.DisplayMember = "CategoryName";
                 category.ValueMember = "CategoryID";
                 category.DataSource = dt;
-             
+
             }
             catch (Exception ex)
             {

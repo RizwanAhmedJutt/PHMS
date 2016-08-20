@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSales));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -37,28 +40,27 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.dpInvoice = new System.Windows.Forms.DateTimePicker();
             this.comboCusName = new System.Windows.Forms.ComboBox();
             this.txtCusID = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtInvoiceId = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txtItemID = new System.Windows.Forms.TextBox();
             this.txtPrice = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.txtTotalAmount = new System.Windows.Forms.TextBox();
             this.comboItem = new System.Windows.Forms.ComboBox();
             this.btnAdd = new System.Windows.Forms.Button();
+            this.label14 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.txtQty = new System.Windows.Forms.TextBox();
             this.lbQty = new System.Windows.Forms.Label();
@@ -80,12 +82,20 @@
             this.txtTotalDueQty = new System.Windows.Forms.TextBox();
             this.btnInvoiceSave = new System.Windows.Forms.Button();
             this.dataGridViewShopingCart = new System.Windows.Forms.DataGridView();
+            this.Column19 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.Column20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column25 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column28 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.txtComments = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.btnInvoiceUpdate = new System.Windows.Forms.Button();
             this.btnInvoice = new System.Windows.Forms.Button();
             this.btnNewRecord = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.txtBillNo = new System.Windows.Forms.TextBox();
             this.GridSaleDetails = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -95,41 +105,27 @@
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn23 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.label40 = new System.Windows.Forms.Label();
             this.label55 = new System.Windows.Forms.Label();
             this.EndDate = new System.Windows.Forms.DateTimePicker();
             this.StartDate = new System.Windows.Forms.DateTimePicker();
             this.btnSearch = new System.Windows.Forms.Button();
             this.btnPrint = new System.Windows.Forms.Button();
+            this.label17 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label33 = new System.Windows.Forms.Label();
             this.ddItems = new System.Windows.Forms.ComboBox();
             this.ddCoustomer = new System.Windows.Forms.ComboBox();
             this.txtCusTotalAmount = new System.Windows.Forms.TextBox();
-            this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.txtInvoiceAmount = new System.Windows.Forms.TextBox();
-            this.dataGridViewInvoiceNo = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn22 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn24 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.groupBox8 = new System.Windows.Forms.GroupBox();
-            this.txtBillNo = new System.Windows.Forms.TextBox();
-            this.btnPrintInvoice = new System.Windows.Forms.Button();
-            this.label54 = new System.Windows.Forms.Label();
             this.lbCusId = new System.Windows.Forms.Label();
             this.InvPrintDocument = new System.Drawing.Printing.PrintDocument();
             this.InvPrintDialog = new System.Windows.Forms.PrintDialog();
             this.InvPrintPreviewDialog = new System.Windows.Forms.PrintPreviewDialog();
             this.pnlMain = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnMin = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.label18 = new System.Windows.Forms.Label();
             this.label47 = new System.Windows.Forms.Label();
@@ -145,19 +141,6 @@
             this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dpInvoice = new System.Windows.Forms.DateTimePicker();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.txtItemID = new System.Windows.Forms.TextBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.Column19 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.Column20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column25 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column28 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -165,9 +148,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewShopingCart)).BeginInit();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridSaleDetails)).BeginInit();
-            this.tabPage5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewInvoiceNo)).BeginInit();
-            this.groupBox8.SuspendLayout();
             this.pnlMain.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -176,7 +156,6 @@
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Controls.Add(this.tabPage5);
             this.tabControl1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControl1.Location = new System.Drawing.Point(0, 48);
             this.tabControl1.Name = "tabControl1";
@@ -239,6 +218,13 @@
             this.panel3.Size = new System.Drawing.Size(1164, 53);
             this.panel3.TabIndex = 167;
             // 
+            // dpInvoice
+            // 
+            this.dpInvoice.Location = new System.Drawing.Point(950, 20);
+            this.dpInvoice.Name = "dpInvoice";
+            this.dpInvoice.Size = new System.Drawing.Size(208, 25);
+            this.dpInvoice.TabIndex = 209;
+            // 
             // comboCusName
             // 
             this.comboCusName.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
@@ -288,6 +274,39 @@
             this.txtInvoiceId.TabStop = false;
             this.txtInvoiceId.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.BackColor = System.Drawing.Color.White;
+            this.label13.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(947, 0);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(42, 17);
+            this.label13.TabIndex = 162;
+            this.label13.Text = "Date :";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.White;
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(808, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(77, 17);
+            this.label7.TabIndex = 162;
+            this.label7.Text = "Account ID :";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.White;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(634, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(77, 17);
+            this.label2.TabIndex = 162;
+            this.label2.Text = "Invoice No :";
+            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -318,6 +337,15 @@
             this.panel1.Size = new System.Drawing.Size(1178, 67);
             this.panel1.TabIndex = 208;
             // 
+            // txtItemID
+            // 
+            this.txtItemID.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.txtItemID.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtItemID.Location = new System.Drawing.Point(6, 33);
+            this.txtItemID.Name = "txtItemID";
+            this.txtItemID.Size = new System.Drawing.Size(79, 25);
+            this.txtItemID.TabIndex = 181;
+            // 
             // txtPrice
             // 
             this.txtPrice.BackColor = System.Drawing.Color.WhiteSmoke;
@@ -326,6 +354,7 @@
             this.txtPrice.Name = "txtPrice";
             this.txtPrice.Size = new System.Drawing.Size(203, 25);
             this.txtPrice.TabIndex = 181;
+            this.txtPrice.TextChanged += new System.EventHandler(this.txtPrice_TextChanged);
             // 
             // label3
             // 
@@ -374,6 +403,7 @@
             this.comboItem.Name = "comboItem";
             this.comboItem.Size = new System.Drawing.Size(382, 25);
             this.comboItem.TabIndex = 179;
+            this.comboItem.KeyDown += new System.Windows.Forms.KeyEventHandler(this.comboItem_KeyDown);
             // 
             // btnAdd
             // 
@@ -393,6 +423,17 @@
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = false;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.Color.White;
+            this.label14.Location = new System.Drawing.Point(6, 13);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(56, 17);
+            this.label14.TabIndex = 186;
+            this.label14.Text = "Item ID :";
             // 
             // label12
             // 
@@ -415,6 +456,7 @@
             this.txtQty.TabIndex = 180;
             this.txtQty.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtQty.TextChanged += new System.EventHandler(this.txtQty_TextChanged_1);
+            this.txtQty.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtQty_KeyDown);
             this.txtQty.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtQty_KeyPress);
             // 
             // lbQty
@@ -548,6 +590,7 @@
             this.txtPayment.Text = "0";
             this.txtPayment.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtPayment.TextChanged += new System.EventHandler(this.txtPayment_TextChanged_1);
+            this.txtPayment.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPayment_KeyDown);
             this.txtPayment.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPayment_KeyPress);
             // 
             // label11
@@ -658,6 +701,55 @@
             this.dataGridViewShopingCart.TabIndex = 183;
             this.dataGridViewShopingCart.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewShopingCart_CellContentClick);
             // 
+            // Column19
+            // 
+            this.Column19.HeaderText = "Return";
+            this.Column19.Name = "Column19";
+            this.Column19.Width = 50;
+            // 
+            // Column20
+            // 
+            this.Column20.HeaderText = "ItemID";
+            this.Column20.Name = "Column20";
+            this.Column20.Visible = false;
+            this.Column20.Width = 50;
+            // 
+            // Column15
+            // 
+            this.Column15.HeaderText = "Item Description";
+            this.Column15.Name = "Column15";
+            this.Column15.Width = 420;
+            // 
+            // Column17
+            // 
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Column17.DefaultCellStyle = dataGridViewCellStyle1;
+            this.Column17.HeaderText = "Quantity";
+            this.Column17.Name = "Column17";
+            this.Column17.Width = 150;
+            // 
+            // Column16
+            // 
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Column16.DefaultCellStyle = dataGridViewCellStyle2;
+            this.Column16.HeaderText = "Sale Price";
+            this.Column16.Name = "Column16";
+            this.Column16.Width = 200;
+            // 
+            // Column25
+            // 
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Column25.DefaultCellStyle = dataGridViewCellStyle3;
+            this.Column25.HeaderText = "Sub Total Amount";
+            this.Column25.Name = "Column25";
+            this.Column25.Width = 250;
+            // 
+            // Column28
+            // 
+            this.Column28.HeaderText = "Edit";
+            this.Column28.Name = "Column28";
+            this.Column28.Width = 50;
+            // 
             // txtComments
             // 
             this.txtComments.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -741,6 +833,7 @@
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.Color.White;
+            this.tabPage2.Controls.Add(this.txtBillNo);
             this.tabPage2.Controls.Add(this.GridSaleDetails);
             this.tabPage2.Controls.Add(this.label40);
             this.tabPage2.Controls.Add(this.label55);
@@ -748,6 +841,7 @@
             this.tabPage2.Controls.Add(this.StartDate);
             this.tabPage2.Controls.Add(this.btnSearch);
             this.tabPage2.Controls.Add(this.btnPrint);
+            this.tabPage2.Controls.Add(this.label17);
             this.tabPage2.Controls.Add(this.label6);
             this.tabPage2.Controls.Add(this.label33);
             this.tabPage2.Controls.Add(this.ddItems);
@@ -759,6 +853,16 @@
             this.tabPage2.Size = new System.Drawing.Size(1170, 557);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "View Sales";
+            // 
+            // txtBillNo
+            // 
+            this.txtBillNo.BackColor = System.Drawing.Color.White;
+            this.txtBillNo.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBillNo.Location = new System.Drawing.Point(646, 32);
+            this.txtBillNo.Name = "txtBillNo";
+            this.txtBillNo.Size = new System.Drawing.Size(176, 29);
+            this.txtBillNo.TabIndex = 161;
+            this.txtBillNo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // GridSaleDetails
             // 
@@ -782,11 +886,14 @@
             this.dataGridViewTextBoxColumn6,
             this.dataGridViewTextBoxColumn7,
             this.dataGridViewTextBoxColumn8,
-            this.dataGridViewTextBoxColumn23});
+            this.dataGridViewTextBoxColumn23,
+            this.Column1,
+            this.Column2});
             this.GridSaleDetails.Location = new System.Drawing.Point(9, 68);
             this.GridSaleDetails.Name = "GridSaleDetails";
             this.GridSaleDetails.Size = new System.Drawing.Size(1153, 449);
             this.GridSaleDetails.TabIndex = 160;
+            this.GridSaleDetails.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridSaleDetails_CellContentClick);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -844,6 +951,18 @@
             this.dataGridViewTextBoxColumn23.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.dataGridViewTextBoxColumn23.Width = 120;
             // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Edit";
+            this.Column1.Name = "Column1";
+            this.Column1.Width = 60;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Delete";
+            this.Column2.Name = "Column2";
+            this.Column2.Width = 60;
+            // 
             // label40
             // 
             this.label40.AutoSize = true;
@@ -897,7 +1016,7 @@
             this.btnSearch.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearch.ForeColor = System.Drawing.Color.White;
             this.btnSearch.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSearch.Location = new System.Drawing.Point(650, 34);
+            this.btnSearch.Location = new System.Drawing.Point(828, 33);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(70, 29);
             this.btnSearch.TabIndex = 143;
@@ -915,7 +1034,7 @@
             this.btnPrint.ForeColor = System.Drawing.Color.White;
             this.btnPrint.Image = global::PHMS.Properties.Resources.print;
             this.btnPrint.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPrint.Location = new System.Drawing.Point(726, 35);
+            this.btnPrint.Location = new System.Drawing.Point(904, 34);
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.Size = new System.Drawing.Size(78, 28);
             this.btnPrint.TabIndex = 141;
@@ -923,6 +1042,17 @@
             this.btnPrint.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnPrint.UseVisualStyleBackColor = false;
             this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click_1);
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.ForeColor = System.Drawing.Color.Black;
+            this.label17.Location = new System.Drawing.Point(642, 8);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(124, 21);
+            this.label17.TabIndex = 140;
+            this.label17.Text = "Enter Invoice No ";
             // 
             // label6
             // 
@@ -982,189 +1112,6 @@
             this.txtCusTotalAmount.TabIndex = 107;
             this.txtCusTotalAmount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // tabPage5
-            // 
-            this.tabPage5.Controls.Add(this.txtInvoiceAmount);
-            this.tabPage5.Controls.Add(this.dataGridViewInvoiceNo);
-            this.tabPage5.Controls.Add(this.groupBox8);
-            this.tabPage5.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabPage5.Location = new System.Drawing.Point(4, 34);
-            this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Size = new System.Drawing.Size(1170, 557);
-            this.tabPage5.TabIndex = 4;
-            this.tabPage5.Text = "View Sale By Voucher No";
-            this.tabPage5.UseVisualStyleBackColor = true;
-            // 
-            // txtInvoiceAmount
-            // 
-            this.txtInvoiceAmount.BackColor = System.Drawing.Color.White;
-            this.txtInvoiceAmount.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtInvoiceAmount.Location = new System.Drawing.Point(965, 519);
-            this.txtInvoiceAmount.Name = "txtInvoiceAmount";
-            this.txtInvoiceAmount.Size = new System.Drawing.Size(201, 29);
-            this.txtInvoiceAmount.TabIndex = 167;
-            this.txtInvoiceAmount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // dataGridViewInvoiceNo
-            // 
-            this.dataGridViewInvoiceNo.AllowUserToAddRows = false;
-            this.dataGridViewInvoiceNo.AllowUserToDeleteRows = false;
-            this.dataGridViewInvoiceNo.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.OrangeRed;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewInvoiceNo.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
-            this.dataGridViewInvoiceNo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewInvoiceNo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn17,
-            this.dataGridViewTextBoxColumn18,
-            this.dataGridViewTextBoxColumn19,
-            this.Column14,
-            this.Column6,
-            this.dataGridViewTextBoxColumn20,
-            this.dataGridViewTextBoxColumn21,
-            this.dataGridViewTextBoxColumn22,
-            this.dataGridViewTextBoxColumn24,
-            this.Column7,
-            this.Column8});
-            this.dataGridViewInvoiceNo.Location = new System.Drawing.Point(8, 98);
-            this.dataGridViewInvoiceNo.Name = "dataGridViewInvoiceNo";
-            this.dataGridViewInvoiceNo.Size = new System.Drawing.Size(1153, 415);
-            this.dataGridViewInvoiceNo.TabIndex = 159;
-            this.dataGridViewInvoiceNo.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewInvoiceNo_CellContentClick);
-            // 
-            // dataGridViewTextBoxColumn17
-            // 
-            this.dataGridViewTextBoxColumn17.HeaderText = "Invoice ID";
-            this.dataGridViewTextBoxColumn17.Name = "dataGridViewTextBoxColumn17";
-            this.dataGridViewTextBoxColumn17.Width = 70;
-            // 
-            // dataGridViewTextBoxColumn18
-            // 
-            this.dataGridViewTextBoxColumn18.HeaderText = "Date";
-            this.dataGridViewTextBoxColumn18.Name = "dataGridViewTextBoxColumn18";
-            // 
-            // dataGridViewTextBoxColumn19
-            // 
-            this.dataGridViewTextBoxColumn19.HeaderText = "Company";
-            this.dataGridViewTextBoxColumn19.Name = "dataGridViewTextBoxColumn19";
-            this.dataGridViewTextBoxColumn19.Width = 120;
-            // 
-            // Column14
-            // 
-            this.Column14.HeaderText = "Category";
-            this.Column14.Name = "Column14";
-            this.Column14.Width = 120;
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "Customer Name";
-            this.Column6.Name = "Column6";
-            this.Column6.Width = 150;
-            // 
-            // dataGridViewTextBoxColumn20
-            // 
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.dataGridViewTextBoxColumn20.DefaultCellStyle = dataGridViewCellStyle9;
-            this.dataGridViewTextBoxColumn20.HeaderText = "Item Name";
-            this.dataGridViewTextBoxColumn20.Name = "dataGridViewTextBoxColumn20";
-            this.dataGridViewTextBoxColumn20.Width = 150;
-            // 
-            // dataGridViewTextBoxColumn21
-            // 
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dataGridViewTextBoxColumn21.DefaultCellStyle = dataGridViewCellStyle10;
-            this.dataGridViewTextBoxColumn21.HeaderText = "Quantity";
-            this.dataGridViewTextBoxColumn21.Name = "dataGridViewTextBoxColumn21";
-            this.dataGridViewTextBoxColumn21.Width = 70;
-            // 
-            // dataGridViewTextBoxColumn22
-            // 
-            this.dataGridViewTextBoxColumn22.HeaderText = "Rate";
-            this.dataGridViewTextBoxColumn22.Name = "dataGridViewTextBoxColumn22";
-            this.dataGridViewTextBoxColumn22.Width = 70;
-            // 
-            // dataGridViewTextBoxColumn24
-            // 
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.Black;
-            this.dataGridViewTextBoxColumn24.DefaultCellStyle = dataGridViewCellStyle11;
-            this.dataGridViewTextBoxColumn24.HeaderText = "SubTotal Amount";
-            this.dataGridViewTextBoxColumn24.Name = "dataGridViewTextBoxColumn24";
-            this.dataGridViewTextBoxColumn24.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewTextBoxColumn24.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.dataGridViewTextBoxColumn24.Width = 120;
-            // 
-            // Column7
-            // 
-            this.Column7.HeaderText = "Edit";
-            this.Column7.Name = "Column7";
-            this.Column7.Width = 60;
-            // 
-            // Column8
-            // 
-            this.Column8.HeaderText = "Delete";
-            this.Column8.Name = "Column8";
-            this.Column8.Width = 60;
-            // 
-            // groupBox8
-            // 
-            this.groupBox8.Controls.Add(this.txtBillNo);
-            this.groupBox8.Controls.Add(this.btnPrintInvoice);
-            this.groupBox8.Controls.Add(this.label54);
-            this.groupBox8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.groupBox8.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox8.Location = new System.Drawing.Point(8, 3);
-            this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(1342, 89);
-            this.groupBox8.TabIndex = 142;
-            this.groupBox8.TabStop = false;
-            // 
-            // txtBillNo
-            // 
-            this.txtBillNo.BackColor = System.Drawing.Color.White;
-            this.txtBillNo.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBillNo.Location = new System.Drawing.Point(10, 50);
-            this.txtBillNo.Name = "txtBillNo";
-            this.txtBillNo.Size = new System.Drawing.Size(211, 29);
-            this.txtBillNo.TabIndex = 100;
-            this.txtBillNo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtBillNo.TextChanged += new System.EventHandler(this.txtBillNo_TextChanged);
-            // 
-            // btnPrintInvoice
-            // 
-            this.btnPrintInvoice.AccessibleRole = System.Windows.Forms.AccessibleRole.TitleBar;
-            this.btnPrintInvoice.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(188)))), ((int)(((byte)(155)))));
-            this.btnPrintInvoice.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnPrintInvoice.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
-            this.btnPrintInvoice.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPrintInvoice.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPrintInvoice.ForeColor = System.Drawing.Color.White;
-            this.btnPrintInvoice.Image = global::PHMS.Properties.Resources.print;
-            this.btnPrintInvoice.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPrintInvoice.Location = new System.Drawing.Point(238, 50);
-            this.btnPrintInvoice.Name = "btnPrintInvoice";
-            this.btnPrintInvoice.Size = new System.Drawing.Size(117, 29);
-            this.btnPrintInvoice.TabIndex = 99;
-            this.btnPrintInvoice.Text = "Print";
-            this.btnPrintInvoice.UseVisualStyleBackColor = false;
-            this.btnPrintInvoice.Click += new System.EventHandler(this.btnPrintInvoice_Click);
-            // 
-            // label54
-            // 
-            this.label54.AutoSize = true;
-            this.label54.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label54.ForeColor = System.Drawing.Color.Black;
-            this.label54.Location = new System.Drawing.Point(6, 20);
-            this.label54.Name = "label54";
-            this.label54.Size = new System.Drawing.Size(173, 21);
-            this.label54.TabIndex = 93;
-            this.label54.Text = "Search Sale Voucher No ";
-            // 
             // lbCusId
             // 
             this.lbCusId.AutoSize = true;
@@ -1204,12 +1151,31 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.panel2.Controls.Add(this.btnMin);
             this.panel2.Controls.Add(this.btnClose);
             this.panel2.Controls.Add(this.label18);
             this.panel2.Location = new System.Drawing.Point(7, 5);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1166, 41);
             this.panel2.TabIndex = 186;
+            // 
+            // btnMin
+            // 
+            this.btnMin.BackColor = System.Drawing.Color.Transparent;
+            this.btnMin.BackgroundImage = global::PHMS.Properties.Resources.min_2;
+            this.btnMin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnMin.FlatAppearance.BorderSize = 0;
+            this.btnMin.FlatAppearance.MouseOverBackColor = System.Drawing.Color.ForestGreen;
+            this.btnMin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMin.ForeColor = System.Drawing.Color.Black;
+            this.btnMin.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnMin.Location = new System.Drawing.Point(1082, 0);
+            this.btnMin.Name = "btnMin";
+            this.btnMin.Size = new System.Drawing.Size(39, 41);
+            this.btnMin.TabIndex = 141;
+            this.btnMin.UseVisualStyleBackColor = false;
+            this.btnMin.Click += new System.EventHandler(this.btnMin_Click);
             // 
             // btnClose
             // 
@@ -1284,9 +1250,9 @@
             // 
             // dataGridViewTextBoxColumn16
             // 
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.Black;
-            this.dataGridViewTextBoxColumn16.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black;
+            this.dataGridViewTextBoxColumn16.DefaultCellStyle = dataGridViewCellStyle8;
             this.dataGridViewTextBoxColumn16.HeaderText = "SubTotal Amount";
             this.dataGridViewTextBoxColumn16.Name = "dataGridViewTextBoxColumn16";
             this.dataGridViewTextBoxColumn16.Resizable = System.Windows.Forms.DataGridViewTriState.True;
@@ -1295,8 +1261,8 @@
             // 
             // dataGridViewTextBoxColumn15
             // 
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dataGridViewTextBoxColumn15.DefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dataGridViewTextBoxColumn15.DefaultCellStyle = dataGridViewCellStyle9;
             this.dataGridViewTextBoxColumn15.HeaderText = "Weight";
             this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
             this.dataGridViewTextBoxColumn15.Width = 110;
@@ -1309,16 +1275,16 @@
             // 
             // dataGridViewTextBoxColumn13
             // 
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dataGridViewTextBoxColumn13.DefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dataGridViewTextBoxColumn13.DefaultCellStyle = dataGridViewCellStyle10;
             this.dataGridViewTextBoxColumn13.HeaderText = "Quantity";
             this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
             this.dataGridViewTextBoxColumn13.Width = 110;
             // 
             // dataGridViewTextBoxColumn12
             // 
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.dataGridViewTextBoxColumn12.DefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.dataGridViewTextBoxColumn12.DefaultCellStyle = dataGridViewCellStyle11;
             this.dataGridViewTextBoxColumn12.HeaderText = "Item Name";
             this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
             this.dataGridViewTextBoxColumn12.Width = 370;
@@ -1346,115 +1312,6 @@
             this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
             this.dataGridViewTextBoxColumn9.Width = 70;
             // 
-            // dpInvoice
-            // 
-            this.dpInvoice.Location = new System.Drawing.Point(950, 20);
-            this.dpInvoice.Name = "dpInvoice";
-            this.dpInvoice.Size = new System.Drawing.Size(208, 25);
-            this.dpInvoice.TabIndex = 209;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.White;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(634, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(77, 17);
-            this.label2.TabIndex = 162;
-            this.label2.Text = "Invoice No :";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.White;
-            this.label7.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(808, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(77, 17);
-            this.label7.TabIndex = 162;
-            this.label7.Text = "Account ID :";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.BackColor = System.Drawing.Color.White;
-            this.label13.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(947, 0);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(42, 17);
-            this.label13.TabIndex = 162;
-            this.label13.Text = "Date :";
-            // 
-            // txtItemID
-            // 
-            this.txtItemID.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.txtItemID.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtItemID.Location = new System.Drawing.Point(6, 33);
-            this.txtItemID.Name = "txtItemID";
-            this.txtItemID.Size = new System.Drawing.Size(79, 25);
-            this.txtItemID.TabIndex = 181;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.ForeColor = System.Drawing.Color.White;
-            this.label14.Location = new System.Drawing.Point(6, 13);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(56, 17);
-            this.label14.TabIndex = 186;
-            this.label14.Text = "Item ID :";
-            // 
-            // Column19
-            // 
-            this.Column19.HeaderText = "Return";
-            this.Column19.Name = "Column19";
-            this.Column19.Width = 50;
-            // 
-            // Column20
-            // 
-            this.Column20.HeaderText = "ItemID";
-            this.Column20.Name = "Column20";
-            this.Column20.Visible = false;
-            this.Column20.Width = 50;
-            // 
-            // Column15
-            // 
-            this.Column15.HeaderText = "Item Description";
-            this.Column15.Name = "Column15";
-            this.Column15.Width = 420;
-            // 
-            // Column17
-            // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Column17.DefaultCellStyle = dataGridViewCellStyle1;
-            this.Column17.HeaderText = "Quantity";
-            this.Column17.Name = "Column17";
-            this.Column17.Width = 150;
-            // 
-            // Column16
-            // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Column16.DefaultCellStyle = dataGridViewCellStyle2;
-            this.Column16.HeaderText = "Sale Price";
-            this.Column16.Name = "Column16";
-            this.Column16.Width = 200;
-            // 
-            // Column25
-            // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Column25.DefaultCellStyle = dataGridViewCellStyle3;
-            this.Column25.HeaderText = "Sub Total Amount";
-            this.Column25.Name = "Column25";
-            this.Column25.Width = 250;
-            // 
-            // Column28
-            // 
-            this.Column28.HeaderText = "Edit";
-            this.Column28.Name = "Column28";
-            this.Column28.Width = 50;
-            // 
             // frmSales
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1481,11 +1338,6 @@
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridSaleDetails)).EndInit();
-            this.tabPage5.ResumeLayout(false);
-            this.tabPage5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewInvoiceNo)).EndInit();
-            this.groupBox8.ResumeLayout(false);
-            this.groupBox8.PerformLayout();
             this.pnlMain.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -1498,16 +1350,11 @@
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.Label lbCusId;
         private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.TabPage tabPage5;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label1;
         internal System.Windows.Forms.TextBox txtInvoiceId;
         internal System.Windows.Forms.TextBox txtCusID;
         private System.Windows.Forms.ComboBox comboCusName;
-        private System.Windows.Forms.GroupBox groupBox8;
-        private System.Windows.Forms.Button btnPrintInvoice;
-        internal System.Windows.Forms.Label label54;
-        internal System.Windows.Forms.TextBox txtBillNo;
         private System.Drawing.Printing.PrintDocument InvPrintDocument;
         private System.Windows.Forms.PrintDialog InvPrintDialog;
         private System.Windows.Forms.PrintPreviewDialog InvPrintPreviewDialog;
@@ -1516,7 +1363,6 @@
         internal System.Windows.Forms.TextBox txtCusTotalAmount;
         internal System.Windows.Forms.Label label20;
         internal System.Windows.Forms.Label label23;
-        private System.Windows.Forms.DataGridView dataGridViewInvoiceNo;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Button btnPrint;
         internal System.Windows.Forms.Label label33;
@@ -1583,30 +1429,10 @@
         internal System.Windows.Forms.Label label55;
         private System.Windows.Forms.DateTimePicker EndDate;
         private System.Windows.Forms.DateTimePicker StartDate;
-        internal System.Windows.Forms.TextBox txtInvoiceAmount;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.DataGridViewButtonColumn Column8;
-        private System.Windows.Forms.DataGridViewButtonColumn Column7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn24;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn22;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn21;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn20;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column14;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn19;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn18;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn17;
         private System.Windows.Forms.DataGridView GridSaleDetails;
         internal System.Windows.Forms.Panel panel2;
         internal System.Windows.Forms.Label label18;
         private System.Windows.Forms.Button btnClose;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn23;
         private System.Windows.Forms.DateTimePicker dpInvoice;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label7;
@@ -1620,5 +1446,18 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column16;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column25;
         private System.Windows.Forms.DataGridViewButtonColumn Column28;
+        private System.Windows.Forms.Button btnMin;
+        internal System.Windows.Forms.TextBox txtBillNo;
+        internal System.Windows.Forms.Label label17;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn23;
+        private System.Windows.Forms.DataGridViewButtonColumn Column1;
+        private System.Windows.Forms.DataGridViewButtonColumn Column2;
     }
 }

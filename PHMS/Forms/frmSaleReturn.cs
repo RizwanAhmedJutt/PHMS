@@ -25,8 +25,6 @@ namespace PHMS
         private void frmEmployee_Load(object sender, EventArgs e)
         {
             dataGridViewPurchaseReturn.RowTemplate.MinimumHeight = 25;
-            db.BindCategory(ddCategory);
-            db.BindCompany(ddCompany);
             BindItems(ddItems);
             BindCustomer(ddSupplier);
         }
@@ -84,15 +82,13 @@ namespace PHMS
                     cmd.Parameters.AddWithValue("@SupplierID", (ddSupplier.SelectedValue.ToString() == "0") ? (object)DBNull.Value : ddSupplier.SelectedValue);
                     cmd.Parameters.AddWithValue("@ItemID", string.IsNullOrEmpty(ddItems.SelectedValue.ToString()) ? (object)DBNull.Value : ddItems.SelectedValue);
                     cmd.Parameters.AddWithValue("@InvoiceID",string.IsNullOrEmpty(txtVoucherNo.Text)? (object)DBNull.Value : txtVoucherNo.Text);
-                    cmd.Parameters.AddWithValue("@CategoryID", (ddCategory.SelectedValue.ToString() == "0") ? (object)DBNull.Value : ddCategory.SelectedValue);
-                    cmd.Parameters.AddWithValue("@CompanyID", (ddCompany.SelectedValue.ToString() == "0") ? (object)DBNull.Value : ddCompany.SelectedValue);
                     cmd.CommandType = CommandType.StoredProcedure;
                     con.Open();
                     reader = cmd.ExecuteReader();
                     dataGridViewPurchaseReturn.Rows.Clear();
                     while (reader.Read())
                     {
-                        dataGridViewPurchaseReturn.Rows.Add(reader["VocNo"], reader["date"], reader["AcTitle"], reader["ItemName"], reader["CategoryName"], reader["CompanyName"], reader["Quantity"], reader["Rate"], reader["SubTotalAmount"]);
+                        dataGridViewPurchaseReturn.Rows.Add(reader["VocNo"], reader["date"], reader["AcTitle"], reader["ItemName"],reader["Quantity"], reader["Rate"], reader["SubTotalAmount"]);
                     }
                     con.Close();
                 }
